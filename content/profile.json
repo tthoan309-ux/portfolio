@@ -1,0 +1,27 @@
+{
+  "fullName": "Tran Thuan Hoan",
+  "preferredName": "Marcuz",
+  "location": "Hanoi, Vietnam",
+  "nationality": "Vietnamese",
+  "position": "Undergraduate Researcher",
+  "university": "Foreign Trade University (FTU)",
+  "faculty": "International Economics",
+  "program": "High Quality Program",
+  "degree": "Bachelor of International Economics",
+  "expectedGraduation": "2027",
+  "gpa": "3.72 / 4.00",
+  "ielts": "7.0",
+  "headline": "Building interdisciplinary research at the intersection of Economics, Artificial Intelligence, Data Science and Public Policy.",
+  "subheadline": "I am an undergraduate researcher focusing on quantitative economics, econometrics, machine learning and innovation systems. My work aims to bridge rigorous empirical research with practical policy impact.",
+  "statement": "I study complex economic problems through quantitative methods, econometric modeling, and machine learning. My goal is to connect careful empirical evidence with interdisciplinary ideas that can improve innovation systems and public policy.",
+  "coursework": [
+    { "name": "Advanced Mathematics", "score": "10.0" },
+    { "name": "Probability & Statistics", "score": "9.3" },
+    { "name": "Econometrics I", "score": "9.5" },
+    { "name": "Econometrics II", "score": "10.0" }
+  ],
+  "languages": [
+    { "name": "Vietnamese", "level": "Native" },
+    { "name": "English", "level": "IELTS 7.0" }
+  ]
+}
