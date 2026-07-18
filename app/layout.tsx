@@ -23,15 +23,18 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Marcuz — Economics, AI & Public Policy",
-    template: "%s — Marcuz",
+    default: "Tran Thuan Hoan — Computational Economics Research",
+    template: "%s — Tran Thuan Hoan",
   },
   description: siteConfig.description,
   alternates: { canonical: "/" },
   keywords: [
     "International Economics",
-    "Artificial Intelligence",
+    "Computational Economics",
     "Econometrics",
+    "Machine Learning",
+    "Data Engineering",
+    "Research Software",
     "Climate Economics",
     "Innovation Economics",
     "Data Science",
@@ -43,23 +46,14 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "/",
-    siteName: "Marcuz Research",
-    title: "Marcuz — Economics, AI & Public Policy",
+    siteName: "Tran Thuan Hoan Research",
+    title: "Tran Thuan Hoan — Computational Economics Research",
     description: siteConfig.description,
-    images: [
-      {
-        url: "/og.png",
-        width: 1732,
-        height: 909,
-        alt: "Marcuz — Economics, AI & Public Policy",
-      },
-    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Marcuz — Economics, AI & Public Policy",
+    title: "Tran Thuan Hoan — Computational Economics Research",
     description: siteConfig.description,
-    images: ["/og.png"],
   },
   icons: {
     icon: "/favicon.svg",
@@ -89,18 +83,23 @@ export default function RootLayout({
     nationality: profile.nationality,
     homeLocation: profile.location,
     jobTitle: profile.position,
+    email: `mailto:${profile.email}`,
     affiliation: {
       "@type": "CollegeOrUniversity",
       name: "Foreign Trade University",
     },
     knowsAbout: [
       "International Economics",
-      "Artificial Intelligence",
+      "Computational Economics",
+      "Machine Learning",
+      "Data Engineering",
+      "Research Software",
       "Econometrics",
       "Climate Economics",
       "Cryptography",
     ],
     url: siteConfig.url,
+    sameAs: [profile.linkedin, profile.github, profile.orcid],
   };
   return (
     <html lang="en" suppressHydrationWarning>
@@ -117,7 +116,7 @@ export default function RootLayout({
             __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
           }}
         />
-        <div id="main-content">{children}</div>
+        {children}
       </body>
     </html>
   );

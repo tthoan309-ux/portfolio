@@ -1,0 +1,67 @@
+[
+  {
+    "id": "econometric-modeling",
+    "number": "01",
+    "title": "Econometric Modeling & Applied Economics",
+    "description": "Applying rigorous econometric methods to investigate macroeconomic, industrial, trade, and environmental systems.",
+    "methods": "Panel data · causal inference · specification testing",
+    "caseStudies": [
+      "fuel-import-volume-analysis",
+      "economic-sanctions-trade-network",
+      "vietnam-feed-industry-analysis"
+    ]
+  },
+  {
+    "id": "machine-learning",
+    "number": "02",
+    "title": "Machine Learning & Explainable AI",
+    "description": "Developing interpretable predictive systems for economic and business decision support.",
+    "methods": "Supervised learning · SHAP · model evaluation",
+    "caseStudies": [
+      "macroeconomic-crisis-early-warning",
+      "financial-distress-research-pipeline",
+      "customer-churn-prediction",
+      "air-quality-health-prediction"
+    ]
+  },
+  {
+    "id": "research-infrastructure",
+    "number": "03",
+    "title": "Data Engineering & Research Infrastructure",
+    "description": "Building reproducible research infrastructure for large-scale empirical analysis.",
+    "methods": "Pipeline design · automation · scientific computing",
+    "caseStudies": [
+      "esg-rag-index",
+      "vietnam-eu-cn8-trade-dataset",
+      "promptforge"
+    ]
+  },
+  {
+    "id": "optimization",
+    "number": "04",
+    "title": "Optimization & Decision Science",
+    "description": "Formulating operational decisions as measurable optimization problems and evaluating algorithms against transparent baselines.",
+    "methods": "Metaheuristics · simulation · sensitivity analysis",
+    "caseStudies": ["delivery-alns", "inventory-optimization"]
+  },
+  {
+    "id": "network-science",
+    "number": "05",
+    "title": "Network Science & Computational Economics",
+    "description": "Using graph-based methods to study trade networks, community structure, and adaptation in interconnected economic systems.",
+    "methods": "Network analysis · community detection · graph embeddings",
+    "caseStudies": [
+      "economic-sanctions-trade-network",
+      "dynamic-community-detection",
+      "economic-graph-embedding"
+    ]
+  },
+  {
+    "id": "business-intelligence",
+    "number": "06",
+    "title": "Business Intelligence & Decision Support",
+    "description": "Designing analytical interfaces that convert operational data into decisions, investigations, and accountable performance monitoring.",
+    "methods": "KPI design · interactive analysis · data storytelling",
+    "caseStudies": ["airline-operational-analytics"]
+  }
+]

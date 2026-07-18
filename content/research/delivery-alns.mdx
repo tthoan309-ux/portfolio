@@ -1,0 +1,26 @@
+---
+title: "Delivery Routing with Adaptive Large Neighborhood Search"
+abstract: "An optimization study using ALNS to solve constrained delivery routing under realistic operational trade-offs."
+capability: "Optimization & Decision Science"
+researchQuestion: "How closely can an adaptive metaheuristic approach high-quality routing solutions under capacity, timing, and service constraints?"
+contribution: "A reproducible ALNS implementation with operator diagnostics, baseline comparison, and sensitivity analysis."
+methodology: "Problem formulation, destroy-and-repair operators, adaptive weighting, simulated acceptance, and benchmark evaluation"
+dataset: "Synthetic and benchmark delivery instances with capacity and time constraints"
+findings: "Adaptive operator selection improves solution quality over fixed heuristics and reveals which neighborhood moves matter under different constraint regimes."
+tools: "Python · optimization · simulation"
+status: "Algorithmic study"
+timeline: "2026"
+order: 13
+---
+
+## Optimization problem
+
+The problem assigns customer deliveries to vehicle routes while respecting capacity, timing, and service constraints and minimizing total operating cost.
+
+## Algorithm
+
+Adaptive Large Neighborhood Search alternates destroy and repair operators, learning which combinations perform well for the current instance. Acceptance rules preserve exploration while the search records operator contribution and convergence behavior.
+
+## Evaluation
+
+Solution quality, runtime, stability, and constraint violations are compared with constructive and fixed-neighborhood baselines. Sensitivity analysis tests whether gains persist as demand and time-window pressure change.

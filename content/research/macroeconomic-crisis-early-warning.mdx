@@ -1,25 +1,31 @@
 ---
 title: "Macroeconomic Crisis Early Warning System"
 abstract: "An explainable machine-learning system for identifying macroeconomic vulnerability before crisis conditions become fully visible."
+capability: "Machine Learning & Explainable AI"
+researchQuestion: "Can an interpretable predictive system detect macroeconomic vulnerability early enough to support policy monitoring?"
+contribution: "An evaluation framework that treats discrimination, calibration, class imbalance, and explanation quality as joint requirements."
 methodology: "Supervised classification, model comparison, calibration, and SHAP interpretation"
 dataset: "Country-level macroeconomic indicators structured as a classification panel"
-tools: "Python, XGBoost, SHAP"
-status: "Machine learning research project"
-timeline: "Completed study"
-technologies:
-  - Python
-  - Machine Learning
-  - XGBoost
-  - SHAP
-  - Classification
-  - Explainable AI
+findings: "Nonlinear models capture interacting vulnerability signals, while SHAP analysis exposes the conditions driving system-level and country-level warnings."
+tools: "Python · XGBoost · SHAP"
+status: "Completed research system"
+timeline: "2025"
+featured: true
 order: 2
 ---
 
-## Research focus
+## Research question
 
-The project frames crisis detection as an imbalanced classification problem. It evaluates whether nonlinear models can capture interactions among macroeconomic indicators while remaining useful to analysts and policymakers.
+Can a predictive system identify macroeconomic vulnerability before crisis conditions become fully visible, while remaining interpretable enough for policy monitoring?
 
-## Analytical approach
+## System design
 
-Model performance is paired with explainability. SHAP values are used to inspect global drivers and individual risk signals, helping distinguish a high-performing alert from a policy-relevant one.
+The project frames early warning as a rare-event problem. It compares linear and nonlinear classifiers, calibrates predicted risks, evaluates class-sensitive metrics, and examines the stability of warnings across validation windows.
+
+## Explainability
+
+SHAP analysis is used at two levels: to identify global vulnerability patterns and to inspect the indicator configuration behind an individual warning. This makes model disagreement and unexpected alerts available for scrutiny.
+
+## Main finding
+
+Nonlinear models capture interactions among external, fiscal, and financial indicators that simpler specifications miss. Calibration and explanation remain necessary before predictive gains can become credible decision support.

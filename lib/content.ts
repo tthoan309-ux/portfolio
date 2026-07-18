@@ -16,12 +16,18 @@ export type ResearchMeta = {
   slug: string;
   title: string;
   abstract: string;
+  capability: string;
+  researchQuestion: string;
+  contribution: string;
   methodology: string;
   dataset: string;
+  findings: string;
   tools: string;
   status: string;
   timeline: string;
-  technologies: string[];
+  repository?: string;
+  paper?: string;
+  featured?: boolean;
   order: number;
 };
 

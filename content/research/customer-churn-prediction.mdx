@@ -1,23 +1,26 @@
 ---
 title: "Customer Churn Prediction"
 abstract: "A comparative classification study designed to identify churn risk and translate model outputs into actionable retention evidence."
+capability: "Machine Learning & Explainable AI"
+researchQuestion: "Which behavioral signals predict churn, and how should decision thresholds change under different retention costs?"
+contribution: "A model-comparison workflow that connects predictive performance with threshold selection and operational intervention."
 methodology: "Logistic regression, random forest, and gradient-boosted model comparison"
 dataset: "Customer behavior and account-level service records"
-tools: "Python, Scikit-learn, XGBoost"
-status: "Business analytics project"
-timeline: "Completed study"
-technologies:
-  - Random Forest
-  - Logistic Regression
-  - XGBoost
-  - Business Analytics
+findings: "Ensemble models improve ranking performance, while the interpretable baseline clarifies stable behavioral factors associated with attrition."
+tools: "Python · Scikit-learn · XGBoost"
+status: "Completed comparative study"
+timeline: "2025"
 order: 3
 ---
 
-## Research focus
+## Research question
 
-This project compares interpretable linear classification with tree-based ensemble methods. The objective is not only to identify likely churn, but also to understand which customer signals can support targeted intervention.
+Which customer behaviors signal attrition, and how should a retention team choose a decision threshold when intervention costs are not symmetric?
 
-## Analytical approach
+## Comparative design
 
-The workflow covers preprocessing, validation, threshold selection, and comparative evaluation. Results are interpreted in the context of operational retention decisions.
+The analysis compares logistic regression with tree-based ensembles under consistent validation splits. Model quality is assessed through ranking, calibration, class-sensitive error, and the operational consequences of alternative thresholds.
+
+## Main finding
+
+Ensemble methods improve predictive ranking, while the linear baseline provides a stable account of the behavioral signals associated with churn. The preferred system combines both perspectives instead of treating the highest score as the only result.

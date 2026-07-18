@@ -53,6 +53,34 @@ h4 {
   background-size: 56px 56px;
   mask-image: linear-gradient(to bottom, black, transparent 95%);
 }
+.research-field {
+  background-image:
+    radial-gradient(
+      circle at center,
+      rgb(37 99 235 / 0.16) 0 1px,
+      transparent 1.5px
+    ),
+    linear-gradient(to right, rgb(148 163 184 / 0.09) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(148 163 184 / 0.09) 1px, transparent 1px);
+  background-size:
+    112px 112px,
+    56px 56px,
+    56px 56px;
+  mask-image: linear-gradient(to bottom, black 15%, transparent 96%);
+}
+summary::marker {
+  content: "";
+}
+a,
+button,
+input,
+summary {
+  -webkit-tap-highlight-color: transparent;
+}
+:focus-visible {
+  outline-color: #2563eb;
+  outline-offset: 3px;
+}
 .portrait-lines {
   background-image: repeating-linear-gradient(
     135deg,
@@ -107,6 +135,12 @@ h4 {
   padding: 0.5rem 0 0.5rem 1.5rem;
   color: #475569;
   font-style: italic;
+}
+.prose-research a {
+  color: #1d4ed8;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
 }
 .dark .prose-research blockquote {
   color: #94a3b8;

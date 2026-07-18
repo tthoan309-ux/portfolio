@@ -6,11 +6,12 @@ import { Command, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const commands = [
-  { label: "Research projects", href: "/#research" },
-  { label: "Education", href: "/#education" },
+  { label: "Current research", href: "/#current-research" },
+  { label: "Research capabilities", href: "/#capabilities" },
+  { label: "Featured case studies", href: "/#case-studies" },
   { label: "Experience", href: "/#experience" },
-  { label: "Skills", href: "/#skills" },
-  { label: "Field notes", href: "/blog" },
+  { label: "Publications", href: "/#publications" },
+  { label: "Research notes", href: "/blog" },
   { label: "Download CV", href: "/marcuz-cv.pdf" },
 ];
 
@@ -18,28 +19,36 @@ export function CommandPalette() {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const router = useRouter();
+
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
       if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === "k") {
         event.preventDefault();
         setOpen((value) => !value);
       }
-      if (event.key === "Escape") setOpen(false);
+      if (event.key === "Escape") {
+        setOpen(false);
+        document.getElementById("command-palette-trigger")?.focus();
+      }
     };
     window.addEventListener("keydown", onKey);
     return () => window.removeEventListener("keydown", onKey);
   }, []);
+
   const filtered = commands.filter((item) =>
     item.label.toLowerCase().includes(query.toLowerCase()),
   );
+
   return (
     <>
       <Button
+        id="command-palette-trigger"
         variant="ghost"
         size="sm"
         onClick={() => setOpen(true)}
         className="hidden gap-1.5 text-slate-500 lg:flex"
         aria-label="Open command palette"
+        aria-haspopup="dialog"
       >
         <Command className="size-3.5" />
         <span className="font-mono text-[10px]">K</span>
@@ -58,6 +67,7 @@ export function CommandPalette() {
           >
             <label className="flex items-center gap-3 border-b border-slate-200 px-5 dark:border-slate-700">
               <Search className="size-4 text-slate-400" />
+              <span className="sr-only">Filter navigation commands</span>
               <input
                 autoFocus
                 value={query}

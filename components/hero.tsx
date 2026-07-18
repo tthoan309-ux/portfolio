@@ -7,69 +7,81 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import { ArrowDown, ArrowUpRight, Download } from "lucide-react";
+import { ArrowDown, Download } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import { Badge } from "@/components/ui/badge";
 import { profile } from "@/data/site";
+
+const snapshot = [
+  ["Current status", "Undergraduate researcher"],
+  ["Current focus", "Energy transition, green growth & public attention"],
+  ["Research areas", "Computational economics · ML · data systems"],
+  ["Expected graduation", profile.expectedGraduation],
+  ["Current GPA", profile.gpa],
+];
 
 export function Hero() {
   const reduceMotion = useReducedMotion();
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
-  const smoothX = useSpring(x, { stiffness: 60, damping: 20 });
-  const smoothY = useSpring(y, { stiffness: 60, damping: 20 });
-  const blobX = useTransform(smoothX, [-0.5, 0.5], [-18, 18]);
-  const blobY = useTransform(smoothY, [-0.5, 0.5], [-12, 12]);
+  const pointerX = useMotionValue(0);
+  const pointerY = useMotionValue(0);
+  const smoothX = useSpring(pointerX, { stiffness: 55, damping: 24 });
+  const smoothY = useSpring(pointerY, { stiffness: 55, damping: 24 });
+  const fieldX = useTransform(smoothX, [-0.5, 0.5], [-12, 12]);
+  const fieldY = useTransform(smoothY, [-0.5, 0.5], [-8, 8]);
 
   return (
     <section
-      className="relative flex min-h-[92svh] items-center overflow-hidden border-b border-slate-200/70 pt-24 dark:border-slate-800/70"
+      className="relative flex min-h-[94svh] items-center overflow-hidden border-b border-slate-200/70 pt-20 dark:border-slate-800/70"
+      aria-labelledby="hero-title"
       onPointerMove={(event) => {
         if (reduceMotion) return;
-        x.set(event.clientX / window.innerWidth - 0.5);
-        y.set(event.clientY / window.innerHeight - 0.5);
+        pointerX.set(event.clientX / window.innerWidth - 0.5);
+        pointerY.set(event.clientY / window.innerHeight - 0.5);
       }}
     >
       <div
-        className="hero-grid absolute inset-0 opacity-60 dark:opacity-30"
+        className="research-field absolute inset-0 opacity-70 dark:opacity-30"
         aria-hidden="true"
       />
       <motion.div
-        style={{ x: blobX, y: blobY }}
-        className="absolute top-24 -right-20 h-80 w-80 rounded-full bg-blue-500/8 blur-3xl dark:bg-blue-400/10"
-        aria-hidden="true"
-      />
-      <div
-        className="absolute bottom-0 left-1/3 h-64 w-64 rounded-full bg-teal-500/8 blur-3xl dark:bg-teal-400/10"
+        style={{ x: fieldX, y: fieldY }}
+        className="absolute top-[16%] right-[8%] size-64 rounded-full bg-blue-600/6 blur-3xl dark:bg-blue-400/8"
         aria-hidden="true"
       />
 
-      <div className="relative mx-auto grid w-full max-w-7xl items-center gap-16 px-5 py-20 lg:grid-cols-[1fr_380px] lg:px-8">
+      <div className="relative mx-auto grid w-full max-w-7xl gap-16 px-5 py-20 lg:grid-cols-[minmax(0,1.3fr)_minmax(330px,.7fr)] lg:items-center lg:px-8">
         <motion.div
-          initial={reduceMotion ? false : { opacity: 0, y: 20 }}
+          initial={reduceMotion ? false : { opacity: 0, y: 18 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
+          transition={{ duration: 0.75, ease: [0.22, 1, 0.36, 1] }}
         >
-          <Badge className="mb-7 border-blue-200 bg-blue-50 text-blue-700 dark:border-blue-900 dark:bg-blue-950/60 dark:text-blue-300">
-            <span className="mr-2 size-1.5 rounded-full bg-teal-500" /> Open to
-            research collaborations
-          </Badge>
-          <p className="mb-5 text-sm font-medium tracking-[0.18em] text-slate-500 uppercase dark:text-slate-400">
-            {profile.position} · {profile.faculty}
-          </p>
-          <h1 className="max-w-4xl text-5xl leading-[0.98] font-semibold tracking-[-0.045em] text-balance text-slate-950 sm:text-6xl lg:text-[5.25rem] dark:text-white">
-            {profile.fullName}
+          <div className="mb-10 flex items-center gap-3 text-xs font-semibold tracking-[.17em] text-slate-500 uppercase dark:text-slate-400">
+            <span
+              className="size-2 rounded-full bg-teal-500"
+              aria-hidden="true"
+            />
+            Hanoi · International Economics
+          </div>
+          <h1
+            id="hero-title"
+            className="max-w-4xl text-[clamp(3.7rem,9vw,7.4rem)] leading-[.86] font-semibold tracking-[-.065em] text-slate-950 dark:text-white"
+          >
+            Tran Thuan
+            <br />
+            Hoan
           </h1>
-          <p className="mt-5 max-w-3xl text-2xl leading-tight font-medium tracking-[-.025em] text-balance text-blue-600 sm:text-3xl dark:text-blue-400">
+          <p className="mt-8 text-xl font-medium tracking-[-.02em] text-blue-700 sm:text-2xl dark:text-blue-400">
+            Undergraduate Researcher
+          </p>
+          <p className="text-slate-650 mt-6 max-w-2xl text-xl leading-8 tracking-[-.015em] text-slate-600 dark:text-slate-300">
             {profile.headline}
           </p>
-          <p className="mt-7 max-w-2xl text-lg leading-8 text-pretty text-slate-600 dark:text-slate-300">
+          <p className="mt-4 max-w-2xl text-base leading-7 text-slate-500 dark:text-slate-400">
             {profile.subheadline}
           </p>
-          <div className="mt-9 flex flex-wrap gap-3">
+          <div className="mt-10 flex flex-wrap gap-3">
             <Button asChild>
-              <a href="#research">
-                Explore research <ArrowDown className="size-4" />
+              <a href="#current-research">
+                Current research <ArrowDown className="size-4" />
               </a>
             </Button>
             <Button asChild variant="outline">
@@ -81,41 +93,38 @@ export function Hero() {
         </motion.div>
 
         <motion.aside
-          initial={reduceMotion ? false : { opacity: 0, scale: 0.96 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ delay: 0.2, duration: 0.8 }}
-          className="relative mx-auto w-full max-w-[380px]"
+          initial={reduceMotion ? false : { opacity: 0, y: 14 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.16, duration: 0.7 }}
+          className="border-t-2 border-slate-950 bg-white/80 dark:border-white dark:bg-slate-950/70"
+          aria-label="Research snapshot"
         >
-          <div className="portrait-frame aspect-[4/5] overflow-hidden rounded-[2rem] border border-white/80 bg-white/70 p-3 shadow-[0_30px_80px_-30px_rgba(15,23,42,0.28)] backdrop-blur dark:border-slate-700/70 dark:bg-slate-900/70">
-            <div className="relative flex h-full items-end overflow-hidden rounded-[1.4rem] bg-slate-900 p-7 text-white">
-              <div
-                className="portrait-lines absolute inset-0 opacity-50"
-                aria-hidden="true"
-              />
-              <div className="absolute -top-14 -right-14 size-48 rounded-full border border-blue-400/30" />
-              <div className="absolute -top-7 -right-7 size-32 rounded-full border border-teal-400/30" />
-              <div className="relative">
-                <div className="mb-5 grid size-16 place-items-center rounded-2xl border border-white/15 bg-white/10 text-xl font-semibold backdrop-blur">
-                  TH
-                </div>
-                <p className="text-2xl font-semibold tracking-tight">
-                  {profile.preferredName}
-                </p>
-                <p className="mt-2 text-sm leading-6 text-slate-300">
-                  {profile.degree}
-                  <br />
-                  {profile.university}
-                </p>
-              </div>
-            </div>
+          <div className="flex items-center justify-between border-b border-slate-200 py-5 dark:border-slate-800">
+            <h2 className="text-sm font-semibold tracking-[.14em] uppercase">
+              Research snapshot
+            </h2>
+            <span className="font-mono text-[10px] text-slate-400">
+              2026 / 07
+            </span>
           </div>
-          <a
-            href="#contact"
-            className="absolute -right-3 -bottom-5 flex items-center gap-2 rounded-full border border-slate-200 bg-white px-4 py-3 text-xs font-semibold shadow-lg transition-transform hover:-translate-y-1 dark:border-slate-700 dark:bg-slate-900"
-          >
-            {profile.location}{" "}
-            <ArrowUpRight className="size-3.5 text-blue-500" />
-          </a>
+          <dl className="divide-y divide-slate-200 dark:divide-slate-800">
+            {snapshot.map(([label, value]) => (
+              <div
+                key={label}
+                className="grid grid-cols-[115px_1fr] gap-5 py-4"
+              >
+                <dt className="text-xs leading-5 text-slate-500">{label}</dt>
+                <dd className="text-sm leading-5 font-medium">{value}</dd>
+              </div>
+            ))}
+          </dl>
+          <div className="mt-2 flex items-center gap-3 border-t border-slate-200 py-5 text-sm font-medium text-teal-700 dark:border-slate-800 dark:text-teal-400">
+            <span className="relative flex size-2" aria-hidden="true">
+              <span className="absolute inline-flex size-full animate-ping rounded-full bg-teal-400 opacity-50" />
+              <span className="relative inline-flex size-2 rounded-full bg-teal-500" />
+            </span>
+            Open for research collaboration
+          </div>
         </motion.aside>
       </div>
     </section>

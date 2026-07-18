@@ -51,7 +51,7 @@ export default async function ArticlePage({
   return (
     <>
       <JournalHeader />
-      <main className="mx-auto max-w-3xl px-5 py-16 sm:py-24">
+      <main id="main-content" className="mx-auto max-w-3xl px-5 py-16 sm:py-24">
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

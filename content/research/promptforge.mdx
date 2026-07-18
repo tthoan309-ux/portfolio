@@ -1,0 +1,26 @@
+---
+title: "PromptForge"
+abstract: "A research-software framework for versioning, testing, and comparing language-model prompts used in empirical workflows."
+capability: "Data Engineering & Research Infrastructure"
+researchQuestion: "How can prompt-based research tasks be evaluated reproducibly when model outputs are stochastic and implementation choices change over time?"
+contribution: "A structured experiment layer for prompt versions, test sets, model settings, output schemas, and evaluation traces."
+methodology: "Experiment configuration, deterministic test fixtures, structured-output validation, comparative evaluation, and run logging"
+dataset: "Versioned prompt suites and task-specific evaluation sets"
+findings: "The framework makes prompt changes measurable and reviewable, reducing hidden methodological drift in language-model-assisted research."
+tools: "TypeScript · Python · structured evaluation"
+status: "Research software prototype"
+timeline: "2026"
+order: 12
+---
+
+## Reproducibility problem
+
+Prompt-based workflows often change without a corresponding record of what changed, which examples were tested, or how outputs were judged. This creates hidden methodological drift.
+
+## System design
+
+PromptForge stores prompt versions, model settings, input fixtures, output schemas, and evaluation criteria as one experiment definition. Comparative runs produce structured traces suitable for review and regression testing.
+
+## Contribution
+
+The framework treats prompt engineering as experimental research software rather than informal trial and error.

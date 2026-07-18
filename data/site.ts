@@ -1,10 +1,18 @@
 import profile from "@/content/profile.json";
 import experience from "@/content/experience.json";
-import skills from "@/content/skills.json";
 import publications from "@/content/publications.json";
 import activities from "@/content/activities.json";
+import capabilities from "@/content/capabilities.json";
+import researchAgenda from "@/content/research-agenda.json";
 
-export { profile, experience, skills, publications, activities };
+export {
+  profile,
+  experience,
+  publications,
+  activities,
+  capabilities,
+  researchAgenda,
+};
 
 const vercelHost =
   process.env.VERCEL_PROJECT_PRODUCTION_URL ?? process.env.VERCEL_URL;
@@ -13,7 +21,7 @@ export const siteConfig = {
   name: profile.preferredName,
   legalName: profile.fullName,
   title: profile.position,
-  description: `${profile.fullName} is an undergraduate researcher in International Economics at Foreign Trade University, working across econometrics, artificial intelligence, data science, and public policy.`,
+  description: `${profile.fullName} is a computational economics researcher combining econometrics, machine learning, data engineering, and research software to study complex economic systems.`,
   url:
     process.env.NEXT_PUBLIC_SITE_URL ??
     (vercelHost ? `https://${vercelHost}` : "http://localhost:3000"),

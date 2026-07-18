@@ -2,9 +2,28 @@
   "workingPapers": [
     {
       "title": "Dynamic Relationship between Energy Transition and Green Growth: The Moderating Role of Public Attention",
-      "status": "Current working paper"
+      "status": "Working paper in development",
+      "abstract": "An empirical investigation of how energy transition affects green growth over time and whether public attention changes the strength of that relationship.",
+      "expectedSubmission": "Targeting 2027",
+      "stages": [
+        { "label": "Literature review", "status": "active" },
+        { "label": "Data collection", "status": "active" },
+        { "label": "Model development", "status": "planned" },
+        { "label": "Writing", "status": "planned" }
+      ]
     }
   ],
   "conferencePapers": [],
-  "researchNotes": []
+  "researchNotes": [
+    {
+      "title": "Measuring AI Diffusion Beyond Adoption Counts",
+      "status": "Research note",
+      "href": "/blog/measuring-ai-diffusion"
+    },
+    {
+      "title": "Green Growth Accounting and the Quality of Transition",
+      "status": "Research note",
+      "href": "/blog/green-growth-accounting"
+    }
+  ]
 }

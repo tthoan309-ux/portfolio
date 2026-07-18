@@ -1,0 +1,26 @@
+---
+title: "Vietnam–EU Monthly CN8 Trade Dataset"
+abstract: "A versioned product-level trade dataset designed for reproducible analysis of Vietnam–EU integration and industrial adjustment."
+capability: "Data Engineering & Research Infrastructure"
+researchQuestion: "How can monthly CN8 trade records be harmonized into a stable panel suitable for policy evaluation and product-level economic analysis?"
+contribution: "A documented construction pipeline that resolves classification revisions, partner codes, units, duplicates, and missing periods."
+methodology: "Automated acquisition, schema validation, code concordance, unit harmonization, and reproducible release generation"
+dataset: "Monthly Vietnam–EU trade flows at CN8 product resolution"
+findings: "The pipeline exposes classification breaks and coverage changes that would otherwise be mistaken for economic movements."
+tools: "Python · SQL · validation tests"
+status: "Dataset construction"
+timeline: "2026"
+order: 11
+---
+
+## Data problem
+
+Monthly product-level trade records change across releases, classifications, and reporting conventions. Without explicit reconciliation, these breaks can look like genuine economic effects.
+
+## Pipeline design
+
+Automated acquisition is followed by schema tests, product-code concordance, partner normalization, duplicate checks, unit reconciliation, and coverage reports. Releases are versioned so that a result can be reproduced against the exact data state used in analysis.
+
+## Research value
+
+The dataset is designed as infrastructure for event studies, trade-policy evaluation, product survival analysis, and research on Vietnam's integration with European markets.

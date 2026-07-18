@@ -1,0 +1,32 @@
+---
+title: "Financial Distress Prediction Pipeline"
+abstract: "An end-to-end research system that converts public financial disclosures into a normalized, explainable dataset for distress modeling."
+capability: "Machine Learning & Explainable AI"
+researchQuestion: "Can heterogeneous public financial disclosures be transformed into a reproducible early-warning dataset without obscuring data quality and model uncertainty?"
+contribution: "A complete evidence pipeline spanning automated collection, document extraction, accounting normalization, dataset construction, prediction, explanation, and evaluation."
+methodology: "Automated CafeF crawling, OCR, PDF parsing, financial-statement normalization, feature engineering, supervised learning, SHAP, and temporal validation"
+dataset: "Vietnamese listed-company financial statements collected from CafeF and associated disclosure documents"
+findings: "The pipeline makes extraction failures, normalization decisions, and model explanations auditable, treating data construction as part of the research result."
+tools: "Python · OCR · PDF parsing · XGBoost · SHAP"
+status: "Research pipeline in development"
+timeline: "2026"
+repository: "https://github.com/tthoan309-ux/financialdistress"
+featured: true
+order: 9
+---
+
+## Research system
+
+This is not only a classification model. It is an end-to-end empirical pipeline designed to make public financial disclosures usable for reproducible distress research.
+
+## Data acquisition and normalization
+
+Automated CafeF crawlers collect issuer pages, financial tables, and linked reports. Structured tables are parsed directly; scanned or irregular PDFs pass through OCR and layout-aware extraction. A normalization layer reconciles labels, units, periods, and accounting identities before records enter the analytical dataset.
+
+## Modeling and evaluation
+
+Feature engineering encodes liquidity, leverage, profitability, cash-flow, and trajectory signals. Models are evaluated with temporal splits, rare-event metrics, calibration, and leakage checks. SHAP explanations are stored alongside predictions so that both global drivers and company-specific alerts can be reviewed.
+
+## Contribution
+
+The principal contribution is an auditable chain from source document to model result. Extraction confidence, reconciliation decisions, dataset versions, and evaluation outputs are preserved as research artifacts.

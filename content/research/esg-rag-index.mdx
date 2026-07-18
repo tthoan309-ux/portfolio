@@ -1,0 +1,28 @@
+---
+title: "ESG-RAG-Index"
+abstract: "A reproducible retrieval and indexing pipeline for evidence-grounded analysis of corporate ESG disclosures."
+capability: "Data Engineering & Research Infrastructure"
+researchQuestion: "How can unstructured ESG disclosures be indexed for comparative research while preserving provenance and citation-level auditability?"
+contribution: "A research infrastructure layer that links every retrieved claim to document, page, reporting period, and extraction version."
+methodology: "Document ingestion, layout-aware parsing, metadata design, chunk evaluation, retrieval testing, and provenance tracking"
+dataset: "Corporate sustainability reports and associated ESG disclosures"
+findings: "The index design prioritizes evidence traceability and retrieval evaluation over unsourced generation, enabling reproducible comparison across issuers and periods."
+tools: "Python · document parsing · vector retrieval"
+status: "Research software prototype"
+timeline: "2026"
+repository: "https://github.com/tthoan309-ux/ESG-RAG-index"
+featured: true
+order: 10
+---
+
+## Infrastructure problem
+
+ESG reports are lengthy, heterogeneous, and difficult to compare. A useful research index must retrieve relevant evidence without separating a claim from its source context.
+
+## Pipeline design
+
+The system ingests documents, preserves page structure, attaches issuer and reporting metadata, and versions every extraction. Retrieval tests use question sets and citation checks rather than relying on anecdotal outputs.
+
+## Contribution
+
+Every result is designed to be traceable to a source document, page, reporting period, and pipeline version. This turns retrieval infrastructure into an auditable component of ESG research.

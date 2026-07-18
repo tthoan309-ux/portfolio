@@ -4,19 +4,22 @@
       "organization": "Young Researchers Club",
       "role": "Research and Development Department",
       "type": "Research experience",
-      "description": "Contributing to research development activities and an interdisciplinary student research community."
+      "period": "Current",
+      "description": "Develop research concepts, review analytical approaches, and contribute to an interdisciplinary environment where student researchers turn early questions into tractable empirical studies."
     },
     {
       "organization": "Global Economics Club",
       "role": "Research Department",
       "type": "Research experience",
-      "description": "Supporting economics research and analytical activities within the club's research department."
+      "period": "Current",
+      "description": "Support economics research through evidence synthesis, quantitative analysis, and collaborative discussion of policy-relevant questions across global and Vietnamese contexts."
     },
     {
       "organization": "G'Contest 2025",
       "role": "Data Analysis Division, Organizing Committee",
       "type": "Academic activity",
-      "description": "Worked with the organizing committee on data analysis for the 2025 competition."
+      "period": "2025",
+      "description": "Designed analytical workflows for competition data, translated operational requirements into measurable indicators, and coordinated findings with the wider organizing committee."
     }
   ],
   "leadership": [
@@ -24,7 +27,7 @@
       "organization": "International Economics Union (IEU)",
       "role": "Vice President",
       "period": "Current",
-      "description": "Serving as the latest leadership role within the International Economics student community."
+      "description": "Coordinate research-oriented academic activities, support interdisciplinary collaboration, and help shape an intellectually rigorous community for International Economics students."
     }
   ]
 }

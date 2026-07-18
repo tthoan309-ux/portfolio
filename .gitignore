@@ -35,6 +35,9 @@ yarn-error.log*
 # vercel
 .vercel
 
+# generated CV working files and visual QA renders
+/output/cv/
+
 # typescript
 next-env.d.ts
 /dist/
