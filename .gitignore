@@ -37,6 +37,10 @@ yarn-error.log*
 
 # generated CV working files and visual QA renders
 /output/cv/
+/output/pdf/Tran_Thuan_Hoan_Research_CV.aux
+/output/pdf/Tran_Thuan_Hoan_Research_CV.log
+/output/pdf/Tran_Thuan_Hoan_Research_CV.out
+/output/pdf/Tran_Thuan_Hoan_Research_CV.pdf
 
 # typescript
 next-env.d.ts
@@ -45,3 +49,8 @@ next-env.d.ts
 /outputs/
 /work/
 /tmp/
+/$tmp/
+
+# Local audit evidence and recoverable pre-edit snapshots
+/_codex_backup/
+/_codex_scan/

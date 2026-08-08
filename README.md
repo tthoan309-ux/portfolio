@@ -1,6 +1,6 @@
-# Tran Thuan Hoan — Academic Research Portfolio
+# Trần Thuận Hoàn — Academic Research Portfolio
 
-A content-driven academic website for Tran Thuan Hoan (Marcuz), an undergraduate researcher in International Economics at Foreign Trade University.
+A content-driven academic website for Trần Thuận Hoàn (preferred name: Marcuz), an undergraduate researcher in International Economics at Foreign Trade University.
 
 ## Stack
 
@@ -36,7 +36,7 @@ The site is edited through `content/`:
 - `experience.json` — research experience and leadership
 - `capabilities.json` — research capability domains and their evidence
 - `research-agenda.json` — current and evolving research directions
-- `publications.json` — working papers and research notes
+- `publications.json` — research in preparation and research notes
 - `research/*.mdx` — research case studies
 - `posts/*.mdx` — searchable research notes
 
@@ -45,3 +45,13 @@ Adding an MDX file with the required frontmatter automatically creates a researc
 ## Deployment
 
 Set `NEXT_PUBLIC_SITE_URL` to the canonical production URL, then deploy the repository to Vercel. No database or external service is required.
+
+## CV source
+
+The public CV is authored in XeLaTeX so Vietnamese typography and hyperlinks remain native in the PDF:
+
+```powershell
+xelatex -interaction=nonstopmode -halt-on-error -output-directory=output/pdf cv/Tran_Thuan_Hoan_Research_CV.tex
+```
+
+The source is `cv/Tran_Thuan_Hoan_Research_CV.tex`; the website serves the verified build from `public/marcuz-cv.pdf`.

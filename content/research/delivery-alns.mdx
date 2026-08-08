@@ -1,26 +1,62 @@
 ---
-title: "Delivery Routing with Adaptive Large Neighborhood Search"
-abstract: "An optimization study using ALNS to solve constrained delivery routing under realistic operational trade-offs."
+title: "Multi-Period Delivery Routing with ALNS"
+abstract: "A tested optimization study for a single-vehicle, multi-day routing problem with multiple customer time windows and an explicit cost of postponement."
 capability: "Optimization & Decision Science"
-researchQuestion: "How closely can an adaptive metaheuristic approach high-quality routing solutions under capacity, timing, and service constraints?"
-contribution: "A reproducible ALNS implementation with operator diagnostics, baseline comparison, and sensitivity analysis."
-methodology: "Problem formulation, destroy-and-repair operators, adaptive weighting, simulated acceptance, and benchmark evaluation"
-dataset: "Synthetic and benchmark delivery instances with capacity and time constraints"
-findings: "Adaptive operator selection improves solution quality over fixed heuristics and reveals which neighborhood moves matter under different constraint regimes."
-tools: "Python · optimization · simulation"
-status: "Algorithmic study"
+researchQuestion: "Can adaptive large-neighborhood search improve route distance and postponement cost while maintaining complete service on the supplied 300-customer instance?"
+contribution: "Implemented the ALNS-OC solver, feasibility logic, baselines, tuning workflow, tests, and report; repository history identifies Trần Thuận Hoàn as an author."
+methodology: "Greedy initialization, adaptive destroy-and-repair operators, opportunity-cost weighting, multi-stage parameter search, three-seed evaluation, and baseline comparison"
+dataset: "A supplied instance with 300 customers and 1,359 delivery windows; Euclidean travel assumptions and one vehicle"
+findings: "The tuned three-seed configuration maintained 100% completion and reported a 32.39% lower objective, 25.17% lower distance, and 32.43% lower postponement penalty than greedy insertion."
+tools: "Python · adaptive large-neighborhood search · heuristic evaluation · pytest"
+status: "Verified algorithmic study"
 timeline: "2026"
-order: 13
+repository: "https://github.com/tthoan309-ux/h2t"
+featured: false
+order: 14
 ---
 
-## Optimization problem
+# Multi-Period Delivery Routing with ALNS
 
-The problem assigns customer deliveries to vehicle routes while respecting capacity, timing, and service constraints and minimizing total operating cost.
+## Overview
 
-## Algorithm
+This algorithmic study models a single-vehicle, multi-day delivery problem in which customers may have multiple service windows and each order can be completed once during the planning week. The objective prioritizes complete service while balancing postponement, travel distance, waiting, and schedule slack.
 
-Adaptive Large Neighborhood Search alternates destroy and repair operators, learning which combinations perform well for the current instance. Acceptance rules preserve exploration while the search records operator contribution and convergence behavior.
+## Problem Definition
 
-## Evaluation
+Can adaptive large-neighborhood search improve route distance and postponement cost while maintaining complete service on the supplied 300-customer instance?
 
-Solution quality, runtime, stability, and constraint violations are compared with constructive and fixed-neighborhood baselines. Sensitivity analysis tests whether gains persist as demand and time-window pressure change.
+## Economic or Technical Motivation
+
+A locally short route can still be operationally poor if it leaves difficult customers for later days. The solver therefore assigns an opportunity cost to postponement and searches jointly over route order and delivery-day assignment.
+
+## Data
+
+The final report uses one supplied instance containing 300 customers and 1,359 time windows. Travel is based on Euclidean coordinates and a fixed-speed conversion. The experiment represents a benchmark-like planning environment, not observed fleet operations.
+
+## Methodology
+
+The implementation combines greedy initialization with adaptive destroy and repair operators. Route feasibility is re-evaluated against multiple customer windows after each insertion. A multi-stage tuning process moves from debugging to random screening and focused comparison; the selected configuration is evaluated over three seeds.
+
+## Main Findings
+
+The tuned configuration reports a mean objective of 5,236,503, 100% completion, 1,534.59 km total distance, and a 521.67 postponement penalty. Relative to greedy insertion, the report records a 32.39% reduction in objective, a 25.17% reduction in distance, and a 32.43% reduction in postponement penalty.
+
+## Robustness, Validation, or Model Assessment
+
+The study compares nearest-neighbor, earliest-deadline-first, greedy-insertion, default ALNS, screening, and tuned ALNS variants. The selected configuration is averaged across three seeds. The repository includes unit tests for distance, time-window feasibility, objective behavior, and time parsing; the earlier audit executed seven tests successfully, while the current bundled Python environment lacks `pytest`.
+
+## Tools and Technologies
+
+Python, pandas, NumPy, adaptive large-neighborhood search, heuristic baselines, parameter search, and pytest tests are directly demonstrated.
+
+## Limitations
+
+The experiment uses Euclidean distance, one vehicle, fixed travel speed, no live traffic, and a limited three-seed final comparison. The selected configuration is best within the executed tuning budget; it is not a proof of global optimality.
+
+## Deliverables
+
+- Source-controlled ALNS solver and operators
+- Baseline and tuning pipeline
+- Unit tests and diagnostic outputs
+- Schedules, metrics, and tuning artifacts
+- Final technical report

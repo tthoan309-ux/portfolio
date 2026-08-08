@@ -1,8 +1,7 @@
 import Link from "next/link";
 import {
-  ArrowRight,
   ArrowUpRight,
-  Download,
+  Eye,
   Github,
   GraduationCap,
   Mail,
@@ -10,6 +9,7 @@ import {
 } from "lucide-react";
 import { Header } from "@/components/header";
 import { Hero } from "@/components/hero";
+import { CvTextTrigger, CvTrigger } from "@/components/cv-viewer";
 import { ResearchCapabilities } from "@/components/research-capabilities";
 import { Reveal } from "@/components/reveal";
 import { Button } from "@/components/ui/button";
@@ -20,7 +20,7 @@ import {
   publications,
   researchAgenda,
 } from "@/data/site";
-import { getPosts, getResearchProjects } from "@/lib/content";
+import { getResearchProjects } from "@/lib/content";
 
 function SectionIntro({
   number,
@@ -57,16 +57,16 @@ function SectionIntro({
 export default function Home() {
   const research = getResearchProjects();
   const featured = research.filter((project) => project.featured).slice(0, 4);
-  const posts = getPosts();
-  const workingPaperSchema = {
-    "@context": "https://schema.org",
-    "@type": "ScholarlyArticle",
-    headline: publications.workingPapers[0].title,
-    description: publications.workingPapers[0].abstract,
-    author: { "@type": "Person", name: profile.fullName },
-    creativeWorkStatus: publications.workingPapers[0].status,
-    about: ["Energy transition", "Green growth", "Public attention"],
-  };
+  const researchInPreparationSchema = publications.workingPapers.map(
+    (paper) => ({
+      "@context": "https://schema.org",
+      "@type": "CreativeWork",
+      headline: paper.title,
+      description: paper.abstract,
+      author: { "@type": "Person", name: profile.fullName },
+      creativeWorkStatus: paper.status,
+    }),
+  );
 
   return (
     <>
@@ -75,17 +75,73 @@ export default function Home() {
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify(workingPaperSchema).replace(/</g, "\\u003c"),
+            __html: JSON.stringify(researchInPreparationSchema).replace(
+              /</g,
+              "\\u003c",
+            ),
           }}
         />
         <Hero />
 
-        <section id="current-research" className="section-shell scroll-mt-24">
+        <section id="education" className="section-shell scroll-mt-24">
           <SectionIntro
             number="01"
-            eyebrow="Current research"
-            title="An evolving agenda for technological and institutional change."
-            description="These are research directions rather than a list of completed projects. They define the questions, evidence, and infrastructure I am building toward."
+            eyebrow="Education"
+            title="Academic training in international economics and quantitative methods."
+          />
+          <Reveal className="grid gap-10 border-y border-slate-300 py-8 lg:grid-cols-[1.15fr_.85fr] dark:border-slate-700">
+            <div>
+              <div className="flex items-center gap-3 text-xs font-semibold tracking-[.14em] text-slate-400 uppercase">
+                <GraduationCap className="size-4" /> Foreign Trade University
+              </div>
+              <h3 className="mt-7 text-3xl font-semibold tracking-[-.035em]">
+                {profile.degree}
+              </h3>
+              <p className="mt-3 text-sm text-slate-600 dark:text-slate-400">
+                {profile.program} · Faculty of {profile.faculty}
+              </p>
+              <dl className="mt-8 grid max-w-xl grid-cols-2 gap-px bg-slate-200 dark:bg-slate-800">
+                <div className="bg-slate-50 p-5 dark:bg-slate-950">
+                  <dt className="text-[10px] text-slate-400 uppercase">
+                    Expected graduation
+                  </dt>
+                  <dd className="mt-2 font-semibold">
+                    {profile.expectedGraduation}
+                  </dd>
+                </div>
+                <div className="bg-slate-50 p-5 dark:bg-slate-950">
+                  <dt className="text-[10px] text-slate-400 uppercase">GPA</dt>
+                  <dd className="mt-2 font-semibold">{profile.gpa}</dd>
+                </div>
+              </dl>
+            </div>
+            <div>
+              <p className="text-[10px] font-semibold tracking-[.14em] text-slate-400 uppercase">
+                Relevant coursework
+              </p>
+              <div className="mt-5 divide-y divide-slate-200 border-y border-slate-200 dark:divide-slate-800 dark:border-slate-800">
+                {profile.coursework.map((course) => (
+                  <div
+                    key={course.name}
+                    className="flex justify-between gap-4 py-4 text-sm"
+                  >
+                    <span className="text-slate-600 dark:text-slate-400">
+                      {course.name}
+                    </span>
+                    <span className="font-mono text-xs">{course.score}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Reveal>
+        </section>
+
+        <section id="current-research" className="section-shell scroll-mt-24">
+          <SectionIntro
+            number="02"
+            eyebrow="Research Agenda"
+            title="Research directions grounded in ongoing work"
+            description="The research directions below grow out of projects, datasets, and research infrastructure documented in this portfolio. They represent work already underway, as well as ideas being prepared for further development. Projects that have not yet produced completed findings are described accordingly."
           />
           <div className="grid border-t border-l border-slate-200 sm:grid-cols-2 lg:grid-cols-3 dark:border-slate-800">
             {researchAgenda.map((item, index) => (
@@ -118,10 +174,10 @@ export default function Home() {
           className="section-shell scroll-mt-24 border-y border-slate-200/70 bg-slate-100/55 dark:border-slate-800/70 dark:bg-slate-900/30"
         >
           <SectionIntro
-            number="02"
+            number="03"
             eyebrow="Research capabilities"
-            title="Capabilities first. Case studies as evidence."
-            description="Six connected domains describe how I move from an economic question to a reproducible analytical result. Expand any case study to inspect its research design."
+            title="From economic questions to auditable results"
+            description="Across seven research domains, the case studies below show how I frame an economic question, build the evidence, choose an empirical strategy, and document the limitations. Open any case study to explore the analysis in detail."
           />
           <ResearchCapabilities
             capabilities={capabilities}
@@ -131,9 +187,9 @@ export default function Home() {
 
         <section id="case-studies" className="section-shell scroll-mt-24">
           <SectionIntro
-            number="03"
+            number="04"
             eyebrow="Featured case studies"
-            title="Selected empirical systems, documented end to end."
+            title="Selected studies with inspectable evidence and explicit limits."
             description="Each case study states the question, analytical contribution, evidence base, evaluation, and current research status."
           />
           <div className="grid gap-6 lg:grid-cols-2">
@@ -219,11 +275,12 @@ export default function Home() {
           className="section-shell scroll-mt-24 border-y border-slate-200/70 bg-white dark:border-slate-800/70 dark:bg-slate-900/25"
         >
           <SectionIntro
-            number="04"
+            number="05"
             eyebrow="Experience"
-            title="Research practice shaped through analytical responsibility and collaboration."
+            title="Research practice shaped through independent analysis and collaboration."
+            description={experience.intro}
           />
-          <div className="grid gap-14 lg:grid-cols-[1.25fr_.75fr]">
+          <div>
             <div className="border-t border-slate-300 dark:border-slate-700">
               {[...experience.leadership, ...experience.experience].map(
                 (item, index) => (
@@ -252,53 +309,23 @@ export default function Home() {
                 ),
               )}
             </div>
-
-            <Reveal className="border-t-2 border-slate-950 pt-6 dark:border-white">
-              <div className="flex items-center gap-3 text-xs font-semibold tracking-[.14em] text-slate-400 uppercase">
-                <GraduationCap className="size-4" /> Education
-              </div>
-              <h3 className="mt-7 text-2xl font-semibold tracking-[-.03em]">
-                {profile.degree}
-              </h3>
-              <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">
-                {profile.university} · {profile.program}
+            <Reveal className="mt-12 grid gap-4 border-t-2 border-slate-950 pt-7 lg:grid-cols-[190px_1fr] dark:border-white">
+              <p className="text-xs font-semibold tracking-[.14em] text-blue-700 uppercase dark:text-blue-400">
+                How these roles shape my work
               </p>
-              <dl className="mt-8 grid grid-cols-2 gap-px bg-slate-200 dark:bg-slate-800">
-                <div className="bg-white p-4 dark:bg-slate-950">
-                  <dt className="text-[10px] text-slate-400 uppercase">
-                    Graduation
-                  </dt>
-                  <dd className="mt-2 font-semibold">
-                    {profile.expectedGraduation}
-                  </dd>
-                </div>
-                <div className="bg-white p-4 dark:bg-slate-950">
-                  <dt className="text-[10px] text-slate-400 uppercase">GPA</dt>
-                  <dd className="mt-2 font-semibold">{profile.gpa}</dd>
-                </div>
-              </dl>
-              <div className="mt-7 space-y-3">
-                {profile.coursework.map((course) => (
-                  <div
-                    key={course.name}
-                    className="flex justify-between gap-4 text-sm"
-                  >
-                    <span className="text-slate-600 dark:text-slate-400">
-                      {course.name}
-                    </span>
-                    <span className="font-mono text-xs">{course.score}</span>
-                  </div>
-                ))}
-              </div>
+              <p className="max-w-3xl text-sm leading-7 text-slate-600 dark:text-slate-400">
+                {experience.closing}
+              </p>
             </Reveal>
           </div>
         </section>
 
         <section id="publications" className="section-shell scroll-mt-24">
           <SectionIntro
-            number="05"
-            eyebrow="Publications"
-            title="Work in progress, with the research stage made explicit."
+            number="06"
+            eyebrow="Work in progress"
+            title="Work in progress, not publication claims"
+            description="These projects are still being developed. I do not present them as publications or completed findings until the manuscript and supporting evidence are ready."
           />
           {publications.workingPapers.map((paper) => (
             <Reveal
@@ -307,7 +334,7 @@ export default function Home() {
             >
               <div>
                 <p className="text-xs font-semibold tracking-[.15em] text-blue-700 uppercase dark:text-blue-400">
-                  Working paper
+                  {paper.status}
                 </p>
                 <h3 className="mt-5 max-w-3xl text-3xl font-semibold tracking-[-.035em]">
                   {paper.title}
@@ -351,47 +378,6 @@ export default function Home() {
           ))}
         </section>
 
-        <section className="section-shell border-y border-slate-200/70 bg-white dark:border-slate-800/70 dark:bg-slate-900/25">
-          <SectionIntro
-            number="06"
-            eyebrow="Research notes"
-            title="Essays, methods, and arguments under development."
-            description="Short-form research writing used to clarify assumptions, measurement choices, and emerging questions."
-          />
-          <div className="divide-y divide-slate-200 border-y border-slate-200 dark:divide-slate-800 dark:border-slate-800">
-            {posts.map((post, index) => (
-              <Reveal key={post.slug} delay={index * 0.035}>
-                <Link
-                  href={`/blog/${post.slug}`}
-                  className="group grid gap-5 py-8 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none sm:grid-cols-[150px_1fr_auto]"
-                >
-                  <div className="font-mono text-[10px] leading-5 tracking-[.1em] text-slate-400 uppercase">
-                    {post.category}
-                    <br />
-                    {post.date}
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-semibold tracking-[-.03em] group-hover:text-blue-700 dark:group-hover:text-blue-400">
-                      {post.title}
-                    </h3>
-                    <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-600 dark:text-slate-400">
-                      {post.excerpt}
-                    </p>
-                  </div>
-                  <ArrowRight className="mt-1 size-5 text-slate-400 transition-transform group-hover:translate-x-1" />
-                </Link>
-              </Reveal>
-            ))}
-          </div>
-          <div className="mt-8 text-right">
-            <Button asChild variant="outline">
-              <Link href="/blog">
-                Browse all research notes <ArrowUpRight className="size-4" />
-              </Link>
-            </Button>
-          </div>
-        </section>
-
         <section id="contact" className="section-shell scroll-mt-24">
           <Reveal className="grid gap-12 border-t-2 border-slate-950 pt-10 lg:grid-cols-[1fr_auto] lg:items-end dark:border-white">
             <div>
@@ -419,11 +405,9 @@ export default function Home() {
                   LinkedIn <ArrowUpRight className="size-4" />
                 </a>
               </Button>
-              <Button asChild>
-                <a href="/marcuz-cv.pdf" download>
-                  <Download className="size-4" /> Download CV
-                </a>
-              </Button>
+              <CvTrigger variant="default">
+                <Eye className="size-4" /> View CV
+              </CvTrigger>
               <Button asChild variant="outline">
                 <a href={profile.github} target="_blank" rel="noreferrer">
                   <Github className="size-4" /> GitHub
@@ -441,7 +425,7 @@ export default function Home() {
               {profile.fullName}
             </p>
             <p className="mt-2 max-w-md leading-5">
-              Computational economics · econometrics · research systems
+              International trade · firm-level data · research systems
             </p>
             <p className="mt-5">
               © 2026–2027. Personal academic research website.
@@ -470,9 +454,6 @@ export default function Home() {
             >
               GitHub
             </a>
-            <span aria-label="Google Scholar profile forthcoming">
-              Google Scholar
-            </span>
             <a
               href={profile.orcid}
               target="_blank"
@@ -482,12 +463,7 @@ export default function Home() {
             >
               ORCID
             </a>
-            <a href="/marcuz-cv.pdf" className="hover:text-blue-700">
-              CV
-            </a>
-            <Link href="/rss.xml" className="hover:text-blue-700">
-              RSS
-            </Link>
+            <CvTextTrigger>CV</CvTextTrigger>
           </nav>
         </div>
       </footer>

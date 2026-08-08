@@ -1,67 +1,78 @@
 [
   {
-    "id": "econometric-modeling",
+    "id": "trade-geoeconomics",
     "number": "01",
-    "title": "Econometric Modeling & Applied Economics",
-    "description": "Applying rigorous econometric methods to investigate macroeconomic, industrial, trade, and environmental systems.",
-    "methods": "Panel data · causal inference · specification testing",
+    "title": "International Trade Econometrics & Geoeconomic Systems",
+    "description": "Studying sanctions, supply-chain dependence, import concentration, and industrial upgrading with structural-gravity models, panel evidence, and value-chain analysis.",
+    "methods": "PPML · high-dimensional fixed effects · panel models · value-chain analysis",
     "caseStudies": [
-      "fuel-import-volume-analysis",
-      "economic-sanctions-trade-network",
-      "vietnam-feed-industry-analysis"
+      "sanctions-trade-reallocation",
+      "vietnam-automotive-value-chains",
+      "fuel-import-geopolitical-risk"
     ]
   },
   {
-    "id": "machine-learning",
+    "id": "firm-finance",
     "number": "02",
-    "title": "Machine Learning & Explainable AI",
-    "description": "Developing interpretable predictive systems for economic and business decision support.",
-    "methods": "Supervised learning · SHAP · model evaluation",
+    "title": "Firm-Level Finance & Panel Econometrics",
+    "description": "Building auditable Vietnamese firm panels and testing how accounting composition, operating efficiency, cash realization, and profitability evolve within firms.",
+    "methods": "Firm fixed effects · clustered inference · diagnostic-led model selection",
     "caseStudies": [
-      "macroeconomic-crisis-early-warning",
-      "financial-distress-research-pipeline",
-      "customer-churn-prediction",
-      "air-quality-health-prediction"
+      "operating-synergy-profitability",
+      "earnings-composition-persistence",
+      "short-horizon-claim-concentration",
+      "earnings-cash-flow-state-transitions"
     ]
   },
   {
     "id": "research-infrastructure",
     "number": "03",
-    "title": "Data Engineering & Research Infrastructure",
-    "description": "Building reproducible research infrastructure for large-scale empirical analysis.",
-    "methods": "Pipeline design · automation · scientific computing",
+    "title": "Data Engineering & Computational Research Infrastructure",
+    "description": "Building auditable systems that turn heterogeneous web data, financial statements, and public documents into versioned research corpora and analysis-ready evidence.",
+    "methods": "Resumable collection · schema normalization · provenance · PDF extraction · targeted OCR",
+    "caseStudies": ["financial-distress-research-pipeline"]
+  },
+  {
+    "id": "machine-learning",
+    "number": "04",
+    "title": "Machine Learning & Computational Modeling",
+    "description": "Applying supervised learning, information retrieval, and unsupervised graph methods as research instruments, with reproducible evaluation and explicit limits on what each model establishes.",
+    "methods": "Temporal classification · calibration · hybrid retrieval · document embeddings · Leiden community detection",
     "caseStudies": [
+      "financial-distress-research-pipeline",
       "esg-rag-index",
+      "trade-community-detection"
+    ]
+  },
+  {
+    "id": "environment-development",
+    "number": "05",
+    "title": "Environmental & Development Econometrics",
+    "description": "Examining green growth and productive capabilities through cross-country panel and comparative econometric designs with explicit limits on causal interpretation.",
+    "methods": "Country fixed effects · interaction models · cross-sectional OLS · robustness diagnostics",
+    "caseStudies": [
+      "debt-carbon-green-growth",
+      "economic-complexity-determinants"
+    ]
+  },
+  {
+    "id": "network-infrastructure",
+    "number": "06",
+    "title": "Network Science & Research Infrastructure",
+    "description": "Designing reproducible systems for trade networks, statistical data releases, and provenance-aware document research.",
+    "methods": "Leiden communities · data provenance · schema validation · versioned pipelines",
+    "caseStudies": [
+      "trade-community-detection",
       "vietnam-eu-cn8-trade-dataset",
-      "promptforge"
+      "esg-rag-index"
     ]
   },
   {
     "id": "optimization",
-    "number": "04",
+    "number": "07",
     "title": "Optimization & Decision Science",
-    "description": "Formulating operational decisions as measurable optimization problems and evaluating algorithms against transparent baselines.",
-    "methods": "Metaheuristics · simulation · sensitivity analysis",
-    "caseStudies": ["delivery-alns", "inventory-optimization"]
-  },
-  {
-    "id": "network-science",
-    "number": "05",
-    "title": "Network Science & Computational Economics",
-    "description": "Using graph-based methods to study trade networks, community structure, and adaptation in interconnected economic systems.",
-    "methods": "Network analysis · community detection · graph embeddings",
-    "caseStudies": [
-      "economic-sanctions-trade-network",
-      "dynamic-community-detection",
-      "economic-graph-embedding"
-    ]
-  },
-  {
-    "id": "business-intelligence",
-    "number": "06",
-    "title": "Business Intelligence & Decision Support",
-    "description": "Designing analytical interfaces that convert operational data into decisions, investigations, and accountable performance monitoring.",
-    "methods": "KPI design · interactive analysis · data storytelling",
-    "caseStudies": ["airline-operational-analytics"]
+    "description": "Formulating operational trade-offs explicitly and evaluating search algorithms against reproducible baselines and sensitivity checks.",
+    "methods": "Adaptive metaheuristics · baseline comparison · multi-seed evaluation",
+    "caseStudies": ["delivery-alns"]
   }
 ]

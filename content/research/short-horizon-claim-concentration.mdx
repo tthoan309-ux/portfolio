@@ -1,0 +1,60 @@
+---
+title: "Short-Horizon Claim Concentration and Operating Efficiency"
+abstract: "A completed firm-panel study of whether a greater current-liability share predicts subsequent asset turnover, profitability, and operating cash generation."
+capability: "Firm-Level Finance & Panel Econometrics"
+researchQuestion: "Does short-horizon claim concentration predict future operating efficiency within Vietnamese listed firms?"
+contribution: "Constructed and validated the panel, froze the model registry, executed the Stata pipeline, audited GMM diagnostics, and produced machine-readable results and the final research decision."
+methodology: "Dynamic firm fixed effects with clustered inference, prespecified robustness models, reverse-direction tests, multiple-testing correction, and System GMM diagnostics"
+dataset: "9,144 observations across 1,405 nonfinancial Vietnamese listed firms in the main 2016–2024 specification"
+findings: "Lagged short-horizon claim concentration is positively associated with future asset turnover (0.1011, p=0.0385), but the p25-to-p75 magnitude is 0.023 outcome standard deviations and significance varies across robustness models."
+tools: "Stata 17 · reghdfe · panel diagnostics · multiple testing · System GMM audit"
+status: "Completed FE study"
+timeline: "2016–2024 confirmatory panel"
+featured: false
+order: 9
+---
+
+# Short-Horizon Claim Concentration and Operating Efficiency
+
+## Overview
+
+This project evaluates whether the share of current liabilities in total liabilities predicts subsequent operating efficiency. The final decision is to retain the fixed-effects evidence and reject the invalid GMM specifications.
+
+## Research Question
+
+Does short-horizon claim concentration predict future asset turnover and related operating outcomes within Vietnamese listed firms?
+
+## Economic or Technical Motivation
+
+A larger share of near-term claims may impose settlement pressure that disciplines asset use, but it may also reflect financial fragility or reverse selection. The design tests prediction within firms without assigning a causal mechanism.
+
+## Data
+
+The source panel covers 2010–2024. The confirmatory sample uses nonfinancial firms during 2016–2024; the main model contains 9,144 observations and 1,405 firms. Short-horizon claim concentration is current liabilities divided by total liabilities, not a short-term debt ratio.
+
+## Methodology
+
+The pipeline uses dynamic firm fixed effects with clustered standard errors, prespecified alternative outcomes and samples, reverse-direction models, COVID sensitivity, multiple-testing correction, and System GMM diagnostics.
+
+## Main Findings
+
+Lagged claim concentration is positively associated with future asset turnover: 0.1011 with SE 0.0488 and p=0.0385. A p25-to-p75 shift corresponds to 0.0281 asset-turnover units, or 0.023 outcome standard deviations. Secondary ROA and CFO/assets estimates are positive before family-wise correction.
+
+## Robustness, Validation, or Model Assessment
+
+The main sign is retained in all comparable robustness models, while 56% have p-values below 0.05. Raw-outcome, rank, and COVID-excluded variants are less precise. All System GMM variants fail required diagnostics; those estimates are rejected rather than used as confirmation.
+
+## Tools and Technologies
+
+Stata 17, reghdfe, firm fixed effects, clustered inference, panel diagnostics, Holm and Benjamini–Hochberg adjustments, and System GMM auditing are directly demonstrated.
+
+## Limitations
+
+The effect is small, statistical significance is not uniform across transformations, and reverse selection is not ruled out. Dynamic fixed effects may be biased in a short panel, while the attempted GMM remedy fails its diagnostics.
+
+## Deliverables
+
+- Reproducible modular Stata pipeline
+- Validation gates and source-version audit
+- CSV/RTF result tables and diagnostic files
+- Final results report and decision memo

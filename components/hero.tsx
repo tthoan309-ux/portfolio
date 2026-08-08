@@ -7,14 +7,21 @@ import {
   useSpring,
   useTransform,
 } from "framer-motion";
-import { ArrowDown, Download } from "lucide-react";
+import { ArrowDown, Eye, Linkedin } from "lucide-react";
+import { CvTrigger } from "@/components/cv-viewer";
 import { Button } from "@/components/ui/button";
 import { profile } from "@/data/site";
 
 const snapshot = [
-  ["Current status", "Undergraduate researcher"],
-  ["Current focus", "Energy transition, green growth & public attention"],
-  ["Research areas", "Computational economics · ML · data systems"],
+  ["Current status", "Undergraduate Researcher in International Economics"],
+  [
+    "Current focus",
+    "Trade adjustment, firm-level data, and applied econometrics",
+  ],
+  [
+    "Research areas",
+    "International trade · Development economics · Firm-level analysis · Panel econometrics · Research data engineering",
+  ],
   ["Expected graduation", profile.expectedGraduation],
   ["Current GPA", profile.gpa],
 ];
@@ -59,15 +66,15 @@ export function Hero() {
               className="size-2 rounded-full bg-teal-500"
               aria-hidden="true"
             />
-            Hanoi · International Economics
+            Hanoi · International Economics · Marcuz
           </div>
           <h1
             id="hero-title"
             className="max-w-4xl text-[clamp(3.7rem,9vw,7.4rem)] leading-[.86] font-semibold tracking-[-.065em] text-slate-950 dark:text-white"
           >
-            Tran Thuan
+            Trần Thuận
             <br />
-            Hoan
+            Hoàn
           </h1>
           <p className="mt-8 text-xl font-medium tracking-[-.02em] text-blue-700 sm:text-2xl dark:text-blue-400">
             Undergraduate Researcher
@@ -84,9 +91,17 @@ export function Hero() {
                 Current research <ArrowDown className="size-4" />
               </a>
             </Button>
-            <Button asChild variant="outline">
-              <a href="/marcuz-cv.pdf" download>
-                Download CV <Download className="size-4" />
+            <CvTrigger variant="outline">
+              View CV <Eye className="size-4" />
+            </CvTrigger>
+            <Button asChild variant="ghost">
+              <a
+                href={profile.linkedin}
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Open Marcuz's LinkedIn profile"
+              >
+                LinkedIn <Linkedin className="size-4" />
               </a>
             </Button>
           </div>
@@ -104,7 +119,7 @@ export function Hero() {
               Research snapshot
             </h2>
             <span className="font-mono text-[10px] text-slate-400">
-              2026 / 07
+              2026 / 08
             </span>
           </div>
           <dl className="divide-y divide-slate-200 dark:divide-slate-800">

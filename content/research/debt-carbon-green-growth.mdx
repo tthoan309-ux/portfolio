@@ -1,0 +1,60 @@
+---
+title: "Carbon Intensity, Debt Concern, and Green Growth"
+abstract: "A completed cross-country panel study of whether debt concern moderates the relationship between carbon intensity and green-growth outcomes."
+capability: "Environmental & Development Econometrics"
+researchQuestion: "Does public-debt concern amplify the adverse association between carbon intensity and green growth?"
+contribution: "Developed and executed the panel specifications and reporting workflow; the source package does not provide a reliable individual task allocation."
+methodology: "Country and year fixed effects with clustered inference, interaction effects, IV fixed effects, and dynamic-panel robustness"
+dataset: "69 countries across 8 periods; 552 observations in the baseline fixed-effects model and 483 in the IV and dynamic specifications"
+findings: "The baseline fixed-effects model reports negative coefficients for carbon intensity, debt concern, and their interaction. IV and dynamic estimates do not reproduce the interaction, so the public conclusion is limited to the baseline conditional association."
+tools: "Stata · panel fixed effects · interaction models · IV diagnostics · dynamic panels"
+status: "Completed empirical report"
+timeline: "8-period country panel"
+featured: false
+order: 4
+---
+
+# Carbon Intensity, Debt Concern, and Green Growth
+
+## Overview
+
+This completed empirical report evaluates whether fiscal pressure changes the relationship between carbon intensity and green-growth performance. The portfolio presents the stable baseline result and preserves the divergence in the robustness models.
+
+## Research Question
+
+Does debt concern amplify the adverse conditional association between carbon intensity and green growth?
+
+## Economic or Technical Motivation
+
+Debt pressure can restrict fiscal space for transition investment and make carbon-intensive production harder to replace. An interaction model tests whether the carbon-intensity slope varies with debt concern.
+
+## Data
+
+The baseline panel contains 552 observations for 69 countries across eight periods. The IV and dynamic specifications use 483 observations because of lag and instrument requirements. Controls include regulatory quality, trade openness, and human development.
+
+## Methodology
+
+The baseline specification uses country and year fixed effects with clustered standard errors. The report also estimates IV fixed effects and a dynamic panel, and reports Hansen and AR(2) diagnostics for the latter.
+
+## Main Findings
+
+The baseline fixed-effects model reports carbon intensity at -1.568, debt concern at -0.638, and the interaction at -0.301; each is significant at the reported 5% level. The within R-squared is 0.294. These coefficients support a negative conditional association in the baseline model only.
+
+## Robustness, Validation, or Model Assessment
+
+The IV interaction is +2.804 with a standard error of 4.491, while the dynamic interaction is -0.823 with a standard error of 0.911. Neither reproduces the baseline interaction precisely. Hansen p-values are 0.719 and 0.554 in the reported dynamic variants, and AR(2) p is 0.375. The robustness evidence therefore limits any causal interpretation.
+
+## Tools and Technologies
+
+Stata, country fixed effects, year fixed effects, clustered inference, interaction models, IV fixed effects, and dynamic-panel diagnostics are directly evidenced.
+
+## Limitations
+
+The preferred baseline relationship is not stable across the IV and dynamic specifications. Measurement choices for debt concern and green growth may also affect interpretation. No causal claim is made.
+
+## Deliverables
+
+- Completed regression report
+- Fixed-effects, IV, and dynamic-panel tables
+- Stata code and model diagnostics
+- Marginal-effect interpretation

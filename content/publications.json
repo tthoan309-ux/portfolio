@@ -1,29 +1,31 @@
 {
   "workingPapers": [
     {
-      "title": "Dynamic Relationship between Energy Transition and Green Growth: The Moderating Role of Public Attention",
-      "status": "Working paper in development",
-      "abstract": "An empirical investigation of how energy transition affects green growth over time and whether public attention changes the strength of that relationship.",
-      "expectedSubmission": "Targeting 2027",
+      "title": "Energy Transition, Green Growth, and Public Attention",
+      "status": "Research in preparation",
+      "abstract": "A planned empirical study currently limited to literature review, data assembly, and measurement design. No estimated result, completed manuscript, or submission is claimed.",
+      "expectedSubmission": "Not yet scheduled",
       "stages": [
         { "label": "Literature review", "status": "active" },
-        { "label": "Data collection", "status": "active" },
-        { "label": "Model development", "status": "planned" },
-        { "label": "Writing", "status": "planned" }
+        { "label": "Data assembly", "status": "active" },
+        { "label": "Measurement design", "status": "planned" },
+        { "label": "Model development", "status": "not started" },
+        { "label": "Writing", "status": "not started" }
+      ]
+    },
+    {
+      "title": "Inventory Buffers under Firm-Level Operating and Input-Cost Shocks",
+      "status": "Work in progress",
+      "abstract": "An ongoing firm-level study of how inventory buffers adjust to operating conditions and external input-cost shocks. Existing exploratory outputs are being used to refine exposure measurement, placebo design, and the empirical specification; no completed mechanism or causal finding is claimed.",
+      "expectedSubmission": "Not yet scheduled",
+      "stages": [
+        { "label": "Firm-panel construction", "status": "active" },
+        { "label": "Shock measurement", "status": "active" },
+        { "label": "Placebo design", "status": "active" },
+        { "label": "Model refinement", "status": "planned" },
+        { "label": "Writing", "status": "not started" }
       ]
     }
   ],
-  "conferencePapers": [],
-  "researchNotes": [
-    {
-      "title": "Measuring AI Diffusion Beyond Adoption Counts",
-      "status": "Research note",
-      "href": "/blog/measuring-ai-diffusion"
-    },
-    {
-      "title": "Green Growth Accounting and the Quality of Transition",
-      "status": "Research note",
-      "href": "/blog/green-growth-accounting"
-    }
-  ]
+  "conferencePapers": []
 }

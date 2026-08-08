@@ -1,0 +1,60 @@
+---
+title: "Equal Profits, Unequal One-Year Persistence"
+abstract: "A fully executed accounting study of whether the composition of current profit predicts one-year earnings reversals in Vietnamese listed firms."
+capability: "Firm-Level Finance & Panel Econometrics"
+researchQuestion: "Holding current profit before tax constant, is reported other profit less persistent than business-operation profit at the one-year horizon?"
+contribution: "Reconstructed and audited the accounting panel, corrected the common sample, executed fixed-effects and robustness models, and produced the final decision memo and report."
+methodology: "Firm and year fixed effects, common-sample correction, accounting-identity validation, wild-cluster bootstrap, multiple-testing adjustment, tail sensitivity, System GMM diagnostics, and expanding-window forecast audit"
+dataset: "7,355 common-sample firm-years across 1,197 Vietnamese listed firms; accounting validation covers 12,074 usable observations in 2016–2024"
+findings: "A shift toward other profit is associated with lower next-year PBT (-0.3001) and net income (-0.2687); both survive Holm and wild-bootstrap inference, but the relationship is short-horizon and tail-sensitive."
+tools: "Stata 17 · Python · firm fixed effects · wild bootstrap · System GMM diagnostics"
+status: "Completed empirical study"
+timeline: "2016–2024 panel"
+featured: true
+order: 8
+---
+
+# Equal Profits, Unequal One-Year Persistence
+
+## Overview
+
+This completed study asks whether equal current profit has different one-year persistence depending on its accounting composition. It was independently reconstructed, corrected, executed, and documented with explicit stopping rules for claims not supported by the data.
+
+## Research Question
+
+Holding current profit before tax constant, is other profit less persistent than reported business-operation profit at the one-year horizon?
+
+## Economic or Technical Motivation
+
+Aggregate earnings can combine operating components with items that reverse more quickly. Testing the components separately can reveal a timing pattern that a single profit number conceals.
+
+## Data
+
+The primary common sample contains 7,355 firm-years and 1,197 firms. Accounting validation covers 12,074 usable observations in 2016–2024: 99.925% reconcile PBT with business-operation profit plus other profit within 1%.
+
+## Methodology
+
+The analysis uses firm and year fixed effects, exact common-sample intersections, actual reported component comparisons, wild-cluster bootstrap inference, Holm adjustment, multi-horizon models, tail and influential-firm sensitivity, System GMM diagnostics, and FE-aware expanding-window forecasting.
+
+## Main Findings
+
+Conditional other profit predicts lower next-year PBT (-0.3001, SE 0.1153, p=0.0094) and net income (-0.2687, SE 0.1063, p=0.0116). Both survive Holm adjustment and wild-cluster bootstrap inference. Reported business-operation profit is more persistent than other profit in raw and common-trimmed earnings models. The association is approximately zero at years two and three, indicating a one-year reversal rather than medium-term underperformance.
+
+## Robustness, Validation, or Model Assessment
+
+The result survives multiple-inference correction and sequential exclusion of firms with the largest other-profit observations, but its magnitude and precision change under alternative tail treatments. The net-income GMM specification passes the reported AR(2) and Hansen diagnostics; it remains secondary and is not treated as causal identification.
+
+## Tools and Technologies
+
+Stata 17, Python, firm fixed effects, wild-cluster bootstrap, Holm correction, System GMM diagnostics, and expanding-window validation are directly evidenced.
+
+## Limitations
+
+The result is predictive and tail-sensitive, not causal. It does not support claims about fraud, manipulation, operating cash flow, or a general medium-term persistence mechanism.
+
+## Deliverables
+
+- One-command Stata pipeline and complete logs
+- Corrected results and decision reports
+- Accounting and common-sample audits
+- Robustness tables and six figures

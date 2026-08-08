@@ -1,0 +1,60 @@
+---
+title: "Trade Reallocation Without Aggregate Diversion"
+abstract: "A completed structural-gravity study of how economic sanctions reduce bilateral trade, redistribute market shares, and reconfigure intermediary positions in the global trade network."
+capability: "International Trade Econometrics & Geoeconomic Systems"
+researchQuestion: "Do sanctions generate enough third-country trade diversion to offset destroyed bilateral trade, or do they primarily redistribute market share within a more fragmented network?"
+contribution: "Co-developed the research design, data construction, PPML analysis, interpretation, and final report; the submitted report records Trần Thuận Hoàn's contribution at 34%."
+methodology: "PPML structural gravity with importer-year, exporter-year, and bilateral-pair fixed effects; sanction-type heterogeneity; lag, placebo, and alternative-measure checks; descriptive network centrality analysis"
+dataset: "415,631 country-pair-year observations, 1991–2023, combining WITS bilateral trade with the Global Sanctions Data Base"
+findings: "Sanctions are associated with roughly 6% lower bilateral trade. Aggregate diversion is weak, while normalized diversion exposure predicts relative market-share reallocation; trade sanctions produce the strongest direct reduction."
+tools: "Stata · PPMLHDFE · structural gravity · network analysis"
+status: "Completed empirical report"
+timeline: "1991–2023 panel · completed 2026"
+featured: true
+order: 1
+---
+
+# Trade Reallocation Without Aggregate Diversion
+
+## Overview
+
+This completed group study examines sanctions as trade-cost shocks and distinguishes absolute replacement of sanctioned trade from relative gains inside destination markets. It combines structural-gravity estimation with a descriptive analysis of changing intermediary positions in world trade.
+
+## Research Question
+
+Do sanctions create enough third-country substitution to replace disrupted bilateral trade, or do they mainly redistribute market shares inside a contracting and more fragmented network?
+
+## Economic or Technical Motivation
+
+An exporter can gain share when a competitor is sanctioned without increasing aggregate trade enough to compensate for the disrupted flow. Separating these two margins prevents relative repositioning from being mislabeled as full trade diversion.
+
+## Data
+
+The final analytical panel contains 415,631 exporter-importer-year observations from 1991 to 2023. Bilateral trade comes from WITS and sanction episodes from the Global Sanctions Data Base. The construction distinguishes direct sanction relationships, sanction type, diversion exposure in levels, and a normalized diversion-share measure.
+
+## Methodology
+
+The main specifications use PPML with importer-year, exporter-year, and bilateral-pair fixed effects. Additional models separate trade, financial, and military sanctions; replace diversion measures; use lagged sanctions; and run placebo specifications. Betweenness centrality is used descriptively to trace intermediary positions in the global trade network.
+
+## Main Findings
+
+The baseline sanction coefficient implies approximately 6% lower bilateral trade. Diversion exposure in levels is weak or statistically insignificant, while the normalized diversion-share measure is positive and significant: exporters can improve their relative position without replacing lost trade in absolute terms. Trade sanctions have the strongest direct association with lower trade; financial and military sanctions are imprecise after fixed effects.
+
+## Robustness, Validation, or Model Assessment
+
+The negative sanction result persists across alternative sanction definitions and lagged specifications. Relative market-share reallocation remains positive across the principal specifications. Placebo diversion variables are reported as insignificant. The network results are explicitly descriptive rather than causal.
+
+## Tools and Technologies
+
+Stata, PPMLHDFE, structural gravity, high-dimensional fixed effects, clustered inference, and network-centrality analysis are directly demonstrated.
+
+## Limitations
+
+The country-pair panel can conceal product- and firm-level adjustment. The diversion variable measures exposure to substitution opportunities rather than direct firm decisions. The network section documents reconfiguration but does not identify a causal effect of sanctions on centrality.
+
+## Deliverables
+
+- Complete 44-page research report
+- Cleaned country-pair-year panel
+- PPML specifications, heterogeneity estimates, and robustness tables
+- Trade-network figures and policy discussion

@@ -162,3 +162,20 @@ summary {
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Production-only interaction deterrent, enabled by CopyProtection. */
+.copy-protected body {
+  -webkit-user-select: none;
+  user-select: none;
+}
+.copy-protected input,
+.copy-protected textarea,
+.copy-protected select,
+.copy-protected [contenteditable="true"],
+.copy-protected [role="textbox"] {
+  -webkit-user-select: text;
+  user-select: text;
+}
+.cv-preview-scroll {
+  overscroll-behavior: contain;
+}

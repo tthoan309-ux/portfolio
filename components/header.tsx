@@ -8,10 +8,10 @@ import { Button } from "@/components/ui/button";
 import { CommandPalette } from "@/components/command-palette";
 
 const links = [
+  ["Education", "#education"],
   ["Current research", "#current-research"],
   ["Capabilities", "#capabilities"],
   ["Case studies", "#case-studies"],
-  ["Notes", "/blog"],
 ];
 
 export function Header() {
@@ -27,7 +27,7 @@ export function Header() {
             TH
           </span>
           <span className="text-sm font-semibold tracking-tight">
-            Hoan Research
+            My Portfolio
           </span>
         </Link>
         <nav

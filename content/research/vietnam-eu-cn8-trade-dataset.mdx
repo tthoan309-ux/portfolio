@@ -1,26 +1,63 @@
 ---
-title: "Vietnam–EU Monthly CN8 Trade Dataset"
-abstract: "A versioned product-level trade dataset designed for reproducible analysis of Vietnam–EU integration and industrial adjustment."
-capability: "Data Engineering & Research Infrastructure"
-researchQuestion: "How can monthly CN8 trade records be harmonized into a stable panel suitable for policy evaluation and product-level economic analysis?"
-contribution: "A documented construction pipeline that resolves classification revisions, partner codes, units, duplicates, and missing periods."
-methodology: "Automated acquisition, schema validation, code concordance, unit harmonization, and reproducible release generation"
-dataset: "Monthly Vietnam–EU trade flows at CN8 product resolution"
-findings: "The pipeline exposes classification breaks and coverage changes that would otherwise be mistaken for economic movements."
-tools: "Python · SQL · validation tests"
-status: "Dataset construction"
+title: "Vietnam-EU Monthly CN8 Trade Data Pipeline"
+abstract: "A resumable Eurostat Comext workflow that constructs member-state and EU-total product-level trade tables with explicit schema and quality rules."
+capability: "Network Science & Research Infrastructure"
+researchQuestion: "How can detailed monthly EU imports from Vietnam be transformed into a versioned CN8 panel without confusing classification, unit, revision, or coverage changes with economic movements?"
+contribution: "The available project files demonstrate crawler, transformation, validation, data-dictionary, and release-generation work; individual contribution is not fully specified in the source materials."
+methodology: "Monthly bulk acquisition, resumable Parquet parts, schema validation, CN8 preservation, reporter aggregation, unit-value construction, and documented quality checks"
+dataset: "Verified partial January 2024 release: 15,096 member-state rows and 3,061 EU-total rows"
+findings: "The current release validates the construction workflow for one month; it does not yet support the planned 2018-to-latest longitudinal coverage or policy-effect analysis."
+tools: "Python · pandas · Parquet · Eurostat Comext · schema validation"
+status: "Verified scoped dataset release"
 timeline: "2026"
-order: 11
+order: 12
 ---
 
-## Data problem
+# Vietnam-EU Monthly CN8 Trade Data Pipeline
 
-Monthly product-level trade records change across releases, classifications, and reporting conventions. Without explicit reconciliation, these breaks can look like genuine economic effects.
+## Overview
 
-## Pipeline design
+This project builds a reproducible pipeline for EU member-state imports originating in Vietnam at monthly CN8 product detail. It retains member-state rows, produces an EU-total aggregation, and documents the reporting grain, variable definitions, raw-data retention, and quality controls.
 
-Automated acquisition is followed by schema tests, product-code concordance, partner normalization, duplicate checks, unit reconciliation, and coverage reports. Releases are versioned so that a result can be reproduced against the exact data state used in analysis.
+The verified public artifact is a partial January 2024 release. The repository documentation describes a broader 2018-to-latest target, but that target is not presented as completed.
 
-## Research value
+## Research Question
 
-The dataset is designed as infrastructure for event studies, trade-policy evaluation, product survival analysis, and research on Vietnam's integration with European markets.
+How can detailed monthly EU imports from Vietnam be transformed into a versioned CN8 panel without confusing classification, unit, revision, or coverage changes with economic movements?
+
+## Economic or Technical Motivation
+
+Detailed trade releases are revised over time, product codes change across nomenclatures, unit values can be noisy, and missing product-country-month records are not automatically zero trade. These issues can create false entry, exit, price, or diversification signals if they are not made explicit.
+
+## Data
+
+The verified member-state Parquet file contains 15,096 rows and 17 columns. The verified EU-total file contains 3,061 rows and 18 columns. Both cover January 2024 only. Unit value is missing in 874 member-state rows and 66 EU-total rows where the necessary quantity information is unavailable; supplementary-unit codes themselves are present.
+
+The main processed grain is reporter by partner by period by CN8 product by supplementary unit. The data dictionary includes dataset schema, pipeline outputs, quality checks, EU27 reporter codes, and sources.
+
+## Methodology
+
+The crawler processes one month at a time, validates each output, and resumes from valid Parquet parts. Transformations preserve leading zeroes in CN8 codes, aggregate statistical procedures, retain raw filtered rows, and compute member-state and EU-total outputs separately. The project avoids hard-coding an unverified CBAM mapping.
+
+## Main Findings
+
+The current files establish a usable one-month release and an explicit data contract. They do not establish trends, trade-policy effects, product upgrading, or complete 2018-to-latest coverage.
+
+## Robustness, Validation, or Model Assessment
+
+Documented checks cover schema, unique grain, reporters, periods, numeric types, product-code preservation, quantities, and aggregation. The current transform test does not collect successfully because of a dynamic-import/dataclass initialization error, so test-suite completion is not claimed.
+
+## Tools and Technologies
+
+Python, pandas, Parquet, Eurostat Comext bulk data, JSONL manifests, and spreadsheet data dictionaries are directly demonstrated.
+
+## Limitations
+
+Only January 2024 is verified. CN revisions require year-specific concordances, chapter 99 and confidentiality can suppress detail, and EU-total imports are not final-consumption destinations. The failed test collection still requires repair.
+
+## Deliverables
+
+- Monthly acquisition and transformation scripts
+- January 2024 member-state and EU-total Parquet releases
+- Data dictionary and quality rules
+- Download manifest and raw/interim/processed directory contract

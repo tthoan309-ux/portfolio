@@ -1,0 +1,133 @@
+% !TeX program = xelatex
+\documentclass[10pt,a4paper]{article}
+
+\usepackage[a4paper,top=13mm,bottom=14mm,left=15mm,right=15mm]{geometry}
+\usepackage{fontspec}
+\usepackage{microtype}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{titlesec}
+\usepackage{xcolor}
+\usepackage[hidelinks,unicode]{hyperref}
+\usepackage{fancyhdr}
+
+\setmainfont{Arial}
+\definecolor{ink}{HTML}{0F172A}
+\definecolor{blue}{HTML}{1D4ED8}
+\definecolor{slate}{HTML}{475569}
+\definecolor{rule}{HTML}{CBD5E1}
+\definecolor{teal}{HTML}{0F766E}
+
+\hypersetup{
+  pdftitle={Trần Thuận Hoàn - Research CV},
+  pdfauthor={Trần Thuận Hoàn},
+  pdfsubject={International Economics and Empirical Research},
+  pdfkeywords={international trade, econometrics, firm-level data, machine learning, data engineering},
+  colorlinks=true,
+  urlcolor=blue
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\fancyfoot[C]{\footnotesize\color{slate}TRẦN THUẬN HOÀN \enspace\textbullet\enspace RESEARCH CV \enspace\textbullet\enspace \thepage}
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[itemize]{leftmargin=4.2mm,label=\textcolor{blue}{\small\textbullet},itemsep=1mm,topsep=1mm,parsep=0pt,partopsep=0pt}
+\titleformat{\section}{\large\bfseries\color{ink}}{}{0pt}{\MakeUppercase}[
+  \vspace{-1.8mm}\color{blue}\rule{\linewidth}{0.7pt}
+]
+\titlespacing*{\section}{0pt}{3.2mm}{2mm}
+
+\newcommand{\entry}[3]{%
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    \textbf{\color{ink}#1} & \textbf{\small\color{slate}#2}\\[-0.2mm]
+    \multicolumn{2}{@{}p{\linewidth}@{}}{\small\color{slate}#3}
+  \end{tabularx}\vspace{0.8mm}
+}
+
+\newcommand{\case}[3]{%
+  \begin{tabularx}{\linewidth}{@{}X r@{}}
+    \textbf{\color{ink}#1} & \textbf{\small\color{teal}#2}\\[-0.2mm]
+    \multicolumn{2}{@{}p{\linewidth}@{}}{\small\color{slate}#3}
+  \end{tabularx}\vspace{1.4mm}
+}
+
+\newcommand{\projectlink}[1]{\enspace{\small\href{#1}{\color{blue}[GitHub]}}}
+
+\begin{document}
+\color{ink}
+
+\begin{center}
+  {\fontsize{23}{25}\selectfont\bfseries TRẦN THUẬN HOÀN}\par
+  \vspace{0.8mm}
+  {\large\color{slate}Marcuz}\par
+  \vspace{1.3mm}
+  {\small\bfseries\color{blue}UNDERGRADUATE RESEARCHER \enspace\textbullet\enspace INTERNATIONAL ECONOMICS \enspace\textbullet\enspace EMPIRICAL RESEARCH}\par
+  \vspace{1.8mm}
+  {\small Hanoi, Vietnam \enspace\textbullet\enspace
+  \href{mailto:tthoan309@gmail.com}{tthoan309@gmail.com} \enspace\textbullet\enspace
+  \href{tel:+84981253503}{+84 981 253 503}}\par
+  \vspace{0.7mm}
+  {\small
+  \href{https://www.linkedin.com/in/1marcuz1/}{LinkedIn} \enspace\textbullet\enspace
+  \href{https://github.com/tthoan309-ux}{GitHub} \enspace\textbullet\enspace
+  \href{https://orcid.org/0009-0007-6229-8585}{ORCID} \enspace\textbullet\enspace
+  \href{https://facebook.com/1marcuz1}{Facebook}}
+\end{center}
+\vspace{0.8mm}
+\color{ink}\rule{\linewidth}{1.1pt}
+
+\section{Research Profile}
+Undergraduate Researcher in International Economics building empirical systems that make economic evidence traceable, testable, and resistant to overstatement. Current work spans product-level trade, Vietnamese firm-level data, panel econometrics, predictive modeling, and reproducible research infrastructure.
+
+\section{Education}
+\entry{Foreign Trade University (FTU)}{Expected September 2027}{Bachelor of International Economics, High Quality Program; GPA: 3.72 / 4.00}
+\textbf{Selected coursework:} Advanced Mathematics (10.0); Probability \& Statistics (9.3); Econometrics I (9.5); Econometrics II (10.0)\par
+\textbf{English:} IELTS 7.0
+
+\section{Academic Experience}
+\entry{Academic Activities Organization Intern, VIASM}{June--August 2026}{Vietnam Institute for Advanced Study in Mathematics. Supported international academic programs through participant coordination, academic correspondence, research-record management, and program materials. Organized VIASM activity data for 2012--2025 and helped structure materials examining academic activities, public research spending, and scientific outputs.}
+
+\section{Selected Research Projects}
+\case{Fragmented Globalization and Vietnam's Automotive Value Chains}{Completed research paper}{A 2015--2023 political-economy study finds that Vietnam expanded automotive production and exports while domestic value capture and localization remained limited. Supplier diversification did not remove dependence on established East Asian production ecosystems.}
+
+\case{Geopolitical Risk, Supplier Concentration, and Fuel Imports}{Completed econometric study}{A 714-observation country panel for 2001--2021 estimates an inverted-U conditional association between geopolitical risk and fuel-import volume. Supplier concentration is positively associated with import volume in the preferred fixed-effects specifications.}
+
+\case{Operating Synergy and Profitability}{Completed econometric analysis}{Across the reported OLS, fixed-effects, random-effects, Driscoll--Kraay, and System GMM models, the interaction between gross margin and asset turnover is positive. The result is interpreted as a conditional association rather than a causal effect.}
+
+\case{Carbon Intensity, Debt Concern, and Green Growth}{Completed empirical report}{The baseline country fixed-effects model reports negative coefficients for carbon intensity, debt concern, and their interaction. IV and dynamic specifications do not reproduce the interaction, so the conclusion remains limited to the baseline association.}
+
+\case{ESG-RAG-Index: Provenance-Aware Disclosure Retrieval\projectlink{https://github.com/tthoan309-ux/ESG-RAG-index}}{Verified research-software prototype}{Built a resumable parsing and retrieval system with a verified 4,320-row document-chunk corpus, page-level provenance, BM25 and hybrid retrieval, and diagnostic artifacts. No completed ESG score release or automated scoring result is claimed.}
+
+\newpage
+
+\section{Selected Empirical Evidence - Continued}
+\case{Trade Reallocation Without Aggregate Diversion}{Completed empirical report}{A 415,631 country-pair-year structural-gravity panel associates sanctions with approximately 6\% lower bilateral trade. Aggregate diversion is weak, while normalized exposure predicts relative market-share reallocation.}
+
+\case{Equal Profits, Unequal One-Year Persistence}{Completed empirical study}{Across 7,355 common-sample firm-years, a shift toward other profit is associated with lower next-year profit before tax ($-0.3001$) and net income ($-0.2687$). Both estimates survive Holm and wild-bootstrap inference, with explicit tail-sensitivity limits.}
+
+\case{Vietnam Financial Disclosure Research Pipeline\projectlink{https://github.com/tthoan309-ux/financialdistress}}{Ongoing research infrastructure}{Built a resumable workflow for collecting, normalizing, validating, and versioning Vietnamese financial statements and annual reports. A temporal benchmark uses 8,292 training, 2,679 validation, and 2,710 test firm-years; accounting distress is a technical benchmark rather than the project's central claim.}
+
+\case{Dynamic Trade Communities and Global Fragmentation}{Completed computational pipeline}{Annual BACI networks for 1996--2024 show weighted modularity rising from 0.272 to 0.416 and within-community trade from 66.5\% to 70.5\%. The package includes Leiden detection, lineage matching, robustness outputs, figures, and automated tests.}
+
+\case{Multi-Period Delivery Routing with ALNS\projectlink{https://github.com/tthoan309-ux/h2t}}{Completed algorithmic study}{Adaptive destroy-and-repair operators, baseline comparisons, unit tests, and multi-seed tuning maintain full service on the supplied 300-customer instance while reducing the reported objective by 32.39\% relative to greedy insertion.}
+
+\section{Research Experience and Leadership}
+\entry{Vice President, International Economics Union (IEU)}{Current}{Contribute to academic direction, internal coordination, research-oriented activities, and the organization of student academic initiatives.}
+\entry{Research and Development Department, Young Researchers Club}{2025--2026}{Develop research ideas, support academic activities, and help translate broad interests into clearer research questions.}
+\entry{Research Department, Global Economics Club}{2025--2026}{Support economic analysis, collaborative learning, and research-related work in international and development economics.}
+
+\section{Methods and Research Tools}
+\begin{tabularx}{\linewidth}{@{}X X@{}}
+  \textbf{Econometrics:} Panel data; firm and year fixed effects; PPML; structural gravity; clustered inference; interaction models
+  & \textbf{Data engineering:} Web collection; schema normalization; provenance; Parquet; PDF parsing; targeted OCR\\[2mm]
+  \textbf{Machine learning:} Logistic regression; random forest; gradient boosting; temporal validation; calibration; class-sensitive metrics
+  & \textbf{Computational methods:} Leiden communities; BM25 and hybrid retrieval; ALNS; robustness and multi-seed evaluation\\[2mm]
+  \textbf{Programming:} Python; Stata; pandas; NumPy; scikit-learn; DuckDB; igraph
+  & \textbf{Research practice:} Reproducible pipelines; diagnostics; sensitivity analysis; causal restraint; research writing
+\end{tabularx}
+
+\end{document}

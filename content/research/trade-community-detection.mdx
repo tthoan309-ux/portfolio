@@ -1,0 +1,61 @@
+---
+title: "Dynamic Trade Communities and Global Fragmentation"
+abstract: "A reproducible network-science pipeline that detects annual trade communities, tracks their lineages, and quantifies changes in modularity and within-bloc trade."
+capability: "Network Science & Research Infrastructure"
+researchQuestion: "Has global trade become more concentrated within dense communities, and how do country affiliations evolve across annual networks?"
+contribution: "Implemented the BACI ingestion, network construction, Leiden detection, lineage matching, robustness outputs, tests, figures, and economic interpretation workflow."
+methodology: "Weighted bilateral trade networks, Leiden RB-configuration partitions, modularity, directed within-community trade accounting, Jaccard lineage matching, and resolution sensitivity"
+dataset: "Annual BACI HS96 trade networks, 1996–2024, with product-level inputs aggregated to exporter-importer flows"
+findings: "Weighted modularity rises from 0.272 in 1996 to 0.416 in 2024, within-community trade from 66.5% to 70.5%, and detected communities from four to six; 219 countries switch lineage at least once."
+tools: "Python · pandas · igraph · leidenalg · pytest · BACI"
+status: "Completed computational research pipeline"
+timeline: "1996–2024 networks"
+featured: true
+order: 11
+---
+
+# Dynamic Trade Communities and Global Fragmentation
+
+## Overview
+
+This project implements a reproducible annual-network pipeline for studying trade fragmentation. It separates the network used for community detection from the original directed flows used for economic accounting and creates stable lineage labels across years.
+
+## Research Question
+
+Has global trade become more concentrated within dense communities, and which countries change their closest community affiliation as the network evolves?
+
+## Economic or Technical Motivation
+
+Raw community labels are arbitrary across years. Longitudinal analysis requires a reproducible way to match communities, distinguish internal from cross-community trade, and test whether a result depends on the Leiden resolution parameter.
+
+## Data
+
+The executed results cover annual BACI HS96 trade networks from 1996 to 2024. Product-level records are validated and aggregated to exporter-importer-year flows, then converted into weighted bilateral networks while retaining directed flows for trade-share accounting.
+
+## Methodology
+
+For each year, the code creates a weighted bilateral graph, applies Leiden community detection using the RB configuration partition, computes modularity and within/cross-community trade shares, and matches adjacent-year communities by Jaccard overlap. Resolution robustness and country-switch diagnostics are exported.
+
+## Main Findings
+
+Weighted modularity rises from 0.272 in 1996 to 0.416 in 2024. Within-community trade increases from 66.5% to 70.5%, and the number of detected communities rises from four to six. The pipeline identifies 219 countries that change lineage at least once.
+
+## Robustness, Validation, or Model Assessment
+
+The package includes tests for BACI ingestion and the network pipeline, fixed random seeds, lineage thresholds, alternative resolution outputs, data validation, and publication-oriented tables. The interpretation report explicitly states that stronger communities are consistent with fragmentation but do not prove a geopolitical cause.
+
+## Tools and Technologies
+
+Python, pandas, NumPy, igraph, leidenalg, matplotlib, seaborn, pytest, and BACI data processing are directly demonstrated.
+
+## Limitations
+
+Community detection is descriptive and sensitive to graph definition, resolution, price valuation, commodity composition, and reporting coverage. Country switches require institutional interpretation and are not events with a single identified cause.
+
+## Deliverables
+
+- Installable Python package and command-line tools
+- BACI merge and product-filter pipeline
+- Seven publication-oriented tables and five figures
+- Resolution robustness and country-lineage outputs
+- Automated tests and economic interpretation report

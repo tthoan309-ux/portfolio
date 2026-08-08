@@ -21,7 +21,7 @@ export const siteConfig = {
   name: profile.preferredName,
   legalName: profile.fullName,
   title: profile.position,
-  description: `${profile.fullName} is a computational economics researcher combining econometrics, machine learning, data engineering, and research software to study complex economic systems.`,
+  description: `${profile.fullName} is an undergraduate researcher working on international trade, firm-level data, applied econometrics, predictive modeling, and reproducible research infrastructure.`,
   url:
     process.env.NEXT_PUBLIC_SITE_URL ??
     (vercelHost ? `https://${vercelHost}` : "http://localhost:3000"),

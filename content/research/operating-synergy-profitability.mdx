@@ -1,0 +1,60 @@
+---
+title: "Operating Synergy and Profitability in Vietnamese Listed Firms"
+abstract: "A completed panel-econometric analysis of whether gross margin and asset turnover jointly explain return on assets beyond their separate contributions."
+capability: "Firm-Level Finance & Panel Econometrics"
+researchQuestion: "Is the interaction between gross margin and asset turnover associated with higher profitability after controlling for firm characteristics, dynamics, and common year shocks?"
+contribution: "Built the ratio panel and executed the Stata diagnostics, fixed-effects, Driscoll–Kraay, and System GMM specifications; no separate contribution statement is available."
+methodology: "Pooled OLS, fixed effects, random effects, Driscoll–Kraay fixed effects, dynamic System GMM, model-selection tests, and marginal effects"
+dataset: "Vietnamese listed-firm accounting panel with 662 source firm-years and 385 observations in the common reported model table, primarily 2016–2024"
+findings: "The gross-margin × asset-turnover interaction is positive across OLS, FE, RE, Driscoll–Kraay FE, and System GMM, ranging from 0.276 to 0.645 in the reported table."
+tools: "Stata · firm fixed effects · Driscoll–Kraay · System GMM · marginal effects"
+status: "Completed econometric analysis"
+timeline: "2016–2024 panel"
+featured: false
+order: 7
+---
+
+# Operating Synergy and Profitability in Vietnamese Listed Firms
+
+## Overview
+
+This project examines whether profitability reflects the joint operation of pricing or margin discipline and asset-use efficiency. The analysis treats the interaction between gross margin and asset turnover as the focal empirical quantity.
+
+## Research Question
+
+Is the gross-margin × asset-turnover interaction positively associated with return on assets after accounting for persistence, capital structure, cash generation, firm effects, and year shocks?
+
+## Economic or Technical Motivation
+
+Margin and turnover can be operational complements: a firm that earns more on each sales unit and generates more sales per asset unit may achieve a profitability gain beyond either component alone.
+
+## Data
+
+The source ratio panel contains 662 Vietnamese listed-firm-year rows. After applying model variables and lags, the common comparison table reports 385 observations, primarily over 2016–2024. Variables include ROA, gross margin, asset turnover, debt, cash flow, retained earnings, and asset growth.
+
+## Methodology
+
+The workflow compares clustered pooled OLS, firm fixed effects, random effects, Driscoll–Kraay fixed effects, and two-step System GMM. It includes model-selection tests, heteroskedasticity, serial-correlation and cross-sectional-dependence diagnostics, year effects, and marginal-effect calculations.
+
+## Main Findings
+
+The interaction coefficient is positive in every reported estimator: 0.276 in OLS, 0.645 in fixed effects, 0.294 in random effects, 0.645 with Driscoll–Kraay inference, and 0.349 in System GMM. Each is marked significant at the 1% level in the archived table. The FE adjusted R-squared is 0.786.
+
+## Robustness, Validation, or Model Assessment
+
+The positive interaction is stable across estimators with different assumptions. The code also runs Hausman, heteroskedasticity, autocorrelation, and cross-sectional-dependence diagnostics. The exported summary does not preserve the full System GMM AR and Hansen diagnostics, so the GMM estimate is supporting evidence rather than the basis for identification.
+
+## Tools and Technologies
+
+Stata, firm fixed effects, clustered standard errors, Driscoll–Kraay inference, System GMM, and marginal-effects analysis are directly demonstrated.
+
+## Limitations
+
+The interaction is associational and may reflect unobserved operating strategy. The estimation sample is much smaller than the source panel, and the archived table does not include complete GMM validity diagnostics.
+
+## Deliverables
+
+- Constructed firm-ratio panel
+- Full Stata diagnostic and estimation script
+- Five-estimator comparison table
+- Marginal-effect specifications

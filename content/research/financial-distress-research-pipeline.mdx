@@ -1,32 +1,76 @@
 ---
-title: "Financial Distress Prediction Pipeline"
-abstract: "An end-to-end research system that converts public financial disclosures into a normalized, explainable dataset for distress modeling."
-capability: "Machine Learning & Explainable AI"
-researchQuestion: "Can heterogeneous public financial disclosures be transformed into a reproducible early-warning dataset without obscuring data quality and model uncertainty?"
-contribution: "A complete evidence pipeline spanning automated collection, document extraction, accounting normalization, dataset construction, prediction, explanation, and evaluation."
-methodology: "Automated CafeF crawling, OCR, PDF parsing, financial-statement normalization, feature engineering, supervised learning, SHAP, and temporal validation"
-dataset: "Vietnamese listed-company financial statements collected from CafeF and associated disclosure documents"
-findings: "The pipeline makes extraction failures, normalization decisions, and model explanations auditable, treating data construction as part of the research result."
-tools: "Python · OCR · PDF parsing · XGBoost · SHAP"
-status: "Research pipeline in development"
-timeline: "2026"
+title: "Vietnam Financial Disclosure Research Pipeline"
+abstract: "An ongoing end-to-end research system for collecting, normalizing, validating, and versioning Vietnamese financial statements and annual reports as an auditable foundation for firm-level empirical research."
+capability: "Data Engineering & Computational Research Infrastructure"
+researchQuestion: "How can heterogeneous public financial disclosures be converted into a reproducible, quality-controlled research corpus that supports firm-level analysis today and text-derived economic indices in future work?"
+contribution: "Designed and implemented the collection, normalization, quality-control, document-extraction, feature-engineering, temporal-evaluation, and reporting workflow; repository history links the work to Trần Thuận Hoàn."
+methodology: "Resumable CafeF collection, financial-statement normalization, schema and coverage validation, annual-report acquisition, PDF text extraction, targeted OCR, versioned firm-year panels, and a preliminary temporal machine-learning benchmark"
+dataset: "Public Vietnamese listed-company disclosures; the verified structured-data benchmark uses 8,292 training, 2,679 validation, and 2,710 test firm-year observations with 180 engineered features"
+findings: "The pipeline produces auditable structured panels, coverage reports, document-processing outputs, and versioned research artifacts. A preliminary accounting-distress experiment demonstrates temporal evaluation, but it is not the project's central research claim."
+tools: "Python · pandas · scikit-learn · Parquet · PDF parsing · OCR · temporal validation"
+status: "Ongoing research infrastructure"
+timeline: "2026–present"
 repository: "https://github.com/tthoan309-ux/financialdistress"
 featured: true
-order: 9
+order: 6
 ---
 
-## Research system
+# Vietnam Financial Disclosure Research Pipeline
 
-This is not only a classification model. It is an end-to-end empirical pipeline designed to make public financial disclosures usable for reproducible distress research.
+## Overview
 
-## Data acquisition and normalization
+This ongoing project builds reusable research infrastructure for Vietnamese firm-level analysis. Its primary contribution is the full pipeline: constructing the company universe, collecting public financial statements and annual reports, reconciling inconsistent accounting labels, preserving provenance, detecting extraction failures, and publishing analysis-ready, versioned outputs.
 
-Automated CafeF crawlers collect issuer pages, financial tables, and linked reports. Structured tables are parsed directly; scanned or irregular PDFs pass through OCR and layout-aware extraction. A normalization layer reconciles labels, units, periods, and accounting identities before records enter the analytical dataset.
+The accounting-distress model in the repository is a preliminary experiment used to exercise the structured-data and temporal-evaluation stages. It is not the project's main identity, and it is not presented as a completed bankruptcy-prediction study.
 
-## Modeling and evaluation
+## Research Question
 
-Feature engineering encodes liquidity, leverage, profitability, cash-flow, and trajectory signals. Models are evaluated with temporal splits, rare-event metrics, calibration, and leakage checks. SHAP explanations are stored alongside predictions so that both global drivers and company-specific alerts can be reviewed.
+How can heterogeneous public financial disclosures be converted into a reproducible, quality-controlled research corpus that supports firm-level empirical analysis today and text-derived economic indices in future work?
 
-## Contribution
+## Economic or Technical Motivation
 
-The principal contribution is an auditable chain from source document to model result. Extraction confidence, reconciliation decisions, dataset versions, and evaluation outputs are preserved as research artifacts.
+Firm-level evidence is only as credible as the dataset constructed before estimation. Vietnamese disclosures vary in labels, units, periods, document structure, and machine readability. The pipeline therefore treats collection, reconciliation, provenance, document processing, and coverage diagnostics as first-class research outputs rather than invisible preprocessing.
+
+## Data
+
+The ticker-source audit contains 1,638 normalized tickers and no duplicate ticker rows, while explicitly warning that a current-listed universe may create survivorship bias. A three-ticker crawl pilot produced 42 firm-years covering 2010–2024 and 8,316 statement-item rows, including 39 mapped and 159 unmapped item codes.
+
+The current structured-data benchmark uses a temporal split of 8,292 training observations, 2,679 validation observations, and 2,710 test observations, with 180 engineered features in each split. The repository flags abnormal CafeF coverage around 2014–2015 and preserves a robustness scenario that excludes these problem years.
+
+## Methodology
+
+The implemented workflow includes resumable web collection, statement-shape validation, accounting-item mapping, unit and period normalization, derived-variable construction, annual-report discovery, PDF text-layer extraction, OCR candidate detection, targeted OCR, firm-year aggregation, versioned Parquet outputs, and automated quality reporting.
+
+A preliminary downstream experiment compares linear and tree-based classifiers under time-ordered train, validation, and test splits. This experiment validates that the structured panel can support reproducible modeling; it does not define the scope of the broader infrastructure project.
+
+## Main Findings
+
+The principal completed output is an auditable data pipeline with explicit coverage, mapping, extraction, and provenance diagnostics. It converts heterogeneous public disclosures into reusable firm-year artifacts while retaining unresolved item mappings and failed-document cases for review.
+
+As a secondary technical benchmark, gradient boosting records ROC-AUC 0.9616, average precision 0.8129, F1 0.7500, and Brier score 0.0479 on the archived 2022–2023 test set. These figures apply only to a rule-based accounting-distress label and are not evidence of external bankruptcy-prediction performance.
+
+## Robustness, Validation, or Model Assessment
+
+The workflow checks statement shape, mapping coverage, duplicate keys, period consistency, and document-extraction status. The experimental model prohibits random train/test splits and includes a strict-label scenario and a problem-year exclusion scenario. Reports preserve thresholds, class-sensitive metrics, confusion-matrix counts, skipped-model reasons, unmapped variables, and survivorship warnings.
+
+## Tools and Technologies
+
+Python, pandas, scikit-learn, Parquet, Excel quality reports, PDF text extraction, and targeted OCR are directly demonstrated in the current repository.
+
+NLP embeddings and text-derived index construction are planned extensions. They are intentionally not listed as completed capabilities or findings.
+
+## Current Development
+
+The next research stage will prepare validated annual-report text for NLP and embedding workflows, then evaluate whether document representations can support transparent firm-level indices. Planned work includes corpus-quality assessment, chunking and metadata design, embedding evaluation, index construction, temporal stability tests, and economic validation against independently observed outcomes.
+
+## Limitations
+
+The company universe may be survivorship-biased, 2014–2015 coverage is problematic, document availability and machine readability remain uneven, and accounting-item mapping is incomplete. The existing distress target is a constructed accounting rule rather than observed bankruptcy. The planned NLP and embedding stages have not yet produced validated public results.
+
+## Deliverables
+
+- Source-controlled collection, normalization, document-processing, and modeling code
+- Versioned Parquet panels and structured research artifacts
+- Ticker, crawl, mapping, extraction, and coverage quality reports
+- Preliminary temporal benchmark metrics and robustness outputs
+- Public repository and executable documentation

@@ -1,0 +1,60 @@
+---
+title: "Persistent Earnings–Cash Flow Misalignment"
+abstract: "A completed multistate analysis of how Vietnamese listed firms move between earnings and operating-cash-flow states, with explicit duration, censoring, and temporal-validation checks."
+capability: "Firm-Level Finance & Panel Econometrics"
+researchQuestion: "How often does positive earnings with negative operating cash flow resolve, persist, or move into an earnings-loss state?"
+contribution: "Built and executed the state-transition pipeline, designed the registered multinomial and validation models, and produced the final tables, figures, reports, and decision memo."
+methodology: "Four-state panel construction, spell analysis, multinomial transition models, CRE and FE checks, inverse-probability weighting, materiality thresholds, and expanding-window temporal validation"
+dataset: "8,885 valid firm-years and 7,488 consecutive transitions for Vietnamese listed nonfinancial firms, 2016–2024"
+findings: "Positive earnings with negative CFO represents 23.2% of valid firm-years; among 1,803 next-year transitions, 53.4% resolve, 36.7% persist, and 9.9% move to an earnings-loss state."
+tools: "Stata 17 · Python · multistate models · IPW · temporal validation"
+status: "Completed descriptive transition study"
+timeline: "2016–2024 panel"
+featured: false
+order: 10
+---
+
+# Persistent Earnings–Cash Flow Misalignment
+
+## Overview
+
+This completed study classifies annual firm observations into four earnings–cash-flow states and follows their transitions. The public result is descriptive: it documents prevalence, resolution, persistence, and loss-state movement without labeling negative cash realization as fraud or distress.
+
+## Research Question
+
+How often does positive net income with negative operating cash flow resolve, persist, or transition to an earnings-loss state, and how does observed spell duration relate to those destinations?
+
+## Economic or Technical Motivation
+
+Accrual earnings and operating cash flow can diverge for ordinary timing, growth, or working-capital reasons. A state-transition framework preserves this distinction while measuring whether repeated misalignment is empirically persistent.
+
+## Data
+
+The validated panel contains 8,885 firm-years from Vietnamese listed nonfinancial firms during 2016–2024 and 7,488 consecutive transitions. Positive earnings with negative CFO accounts for 2,061 observations. The analysis identifies 1,399 spells and separately audits missing-CFO selection.
+
+## Methodology
+
+The project constructs four states, measures spell duration, estimates registered multinomial transition models, tests first-order versus duration-augmented memory, runs CRE and FE checks, applies inverse-probability weighting for observed CFO selection, tests materiality thresholds, and performs expanding-window temporal validation.
+
+## Main Findings
+
+Positive earnings with negative CFO represents 23.2% of valid firm-years. Among 1,803 next-year transitions from this state, 53.4% move to cash-realized profit, 36.7% persist, and 9.9% move to an earnings-loss state. In-sample predicted persistence rises from 34.6% at duration one to 61.0% at duration four or more.
+
+## Robustness, Validation, or Model Assessment
+
+Materiality thresholds and IPW preserve the descriptive duration pattern. However, excluding left-censored spells removes the headline duration coefficient, and the duration model does not improve out-of-time log loss over simpler benchmarks. The portfolio therefore reports transition frequencies as the primary verified result, not a superior semi-Markov forecast.
+
+## Tools and Technologies
+
+Stata 17, Python, multinomial transition models, spell analysis, inverse-probability weighting, materiality thresholds, and expanding-window evaluation are directly evidenced.
+
+## Limitations
+
+Annual observations do not identify exact within-year transition timing. Long spells are sparse and left-censored, and the working-capital mechanism is not supported. The state definitions do not imply fraud, manipulation, or distress.
+
+## Deliverables
+
+- Fully executed one-command analysis pipeline
+- Nine figures and machine-readable result tables
+- State, spell, selection, and calibration audits
+- Final results report and decision memo

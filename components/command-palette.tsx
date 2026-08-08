@@ -4,21 +4,27 @@ import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Command, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useCvViewer } from "@/components/cv-viewer";
 
-const commands = [
+type CommandItem =
+  | { label: string; href: string; action?: never }
+  | { label: string; action: "cv"; href?: never };
+
+const commands: CommandItem[] = [
+  { label: "Education", href: "/#education" },
   { label: "Current research", href: "/#current-research" },
   { label: "Research capabilities", href: "/#capabilities" },
   { label: "Featured case studies", href: "/#case-studies" },
   { label: "Experience", href: "/#experience" },
-  { label: "Publications", href: "/#publications" },
-  { label: "Research notes", href: "/blog" },
-  { label: "Download CV", href: "/marcuz-cv.pdf" },
+  { label: "Work in progress", href: "/#publications" },
+  { label: "View CV", action: "cv" },
 ];
 
 export function CommandPalette() {
   const [open, setOpen] = useState(false);
   const [query, setQuery] = useState("");
   const router = useRouter();
+  const { openCv } = useCvViewer();
 
   useEffect(() => {
     const onKey = (event: KeyboardEvent) => {
@@ -79,10 +85,14 @@ export function CommandPalette() {
             <div className="p-2">
               {filtered.map((item) => (
                 <button
-                  key={item.href}
+                  key={item.href ?? item.action}
                   onClick={() => {
                     setOpen(false);
-                    router.push(item.href);
+                    if (item.action === "cv") {
+                      openCv();
+                    } else {
+                      router.push(item.href);
+                    }
                   }}
                   className="flex w-full items-center justify-between rounded-xl px-4 py-3 text-left text-sm font-medium hover:bg-slate-100 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none dark:hover:bg-slate-800"
                 >

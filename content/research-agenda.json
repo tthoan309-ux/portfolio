@@ -1,32 +1,27 @@
 [
   {
-    "title": "Energy Transition & Green Growth",
-    "framing": "How transition pathways alter the quality, distribution, and durability of economic growth.",
-    "stage": "Working paper"
+    "title": "International Trade under Geoeconomic Fragmentation",
+    "framing": "Testing how sanctions, export controls, supplier dependence, and product-level adjustment reshape trade while distinguishing descriptive change from defensible identification.",
+    "stage": "Active empirical program"
   },
   {
-    "title": "Climate Economics & Public Attention",
-    "framing": "When information, salience, and institutional attention change environmental policy outcomes.",
-    "stage": "Active direction"
+    "title": "Firm-Level Financial Data",
+    "framing": "Building auditable Vietnamese company panels from public financial statements and reports, with explicit attention to coverage, accounting definitions, and temporal validation.",
+    "stage": "Active infrastructure"
   },
   {
-    "title": "ESG Measurement",
-    "framing": "Building auditable evidence systems for sustainability claims, disclosures, and firm-level comparison.",
-    "stage": "Methods development"
+    "title": "Research Decision Audits",
+    "framing": "Using placebo tests, weak-identification diagnostics, robustness gates, and out-of-sample evaluation to decide when a result should proceed, be reframed, or stop.",
+    "stage": "Applied methodology"
   },
   {
-    "title": "AI for Economics",
-    "framing": "Using interpretable learning systems and language models without weakening empirical accountability.",
-    "stage": "Active direction"
+    "title": "ESG and Disclosure Evidence",
+    "framing": "Developing provenance-aware document retrieval that keeps ESG evidence traceable to company, year, source file, page, and extraction state.",
+    "stage": "Prototype development"
   },
   {
-    "title": "Innovation Systems",
-    "framing": "Understanding how technologies diffuse through firms, institutions, and production networks.",
-    "stage": "Evolving agenda"
-  },
-  {
-    "title": "Digital Public Infrastructure",
-    "framing": "Studying the economic institutions, access conditions, and governance choices embedded in digital systems.",
-    "stage": "Exploratory"
+    "title": "Energy Transition and Green Growth",
+    "framing": "Preparing data and measurement choices for future work on energy transition, green growth, and public attention. No empirical result or working-paper claim is made yet.",
+    "stage": "Data assembly"
   }
 ]

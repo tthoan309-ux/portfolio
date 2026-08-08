@@ -10,15 +10,10 @@ export function JournalHeader() {
         <Button asChild variant="ghost" size="sm">
           <Link href="/">
             <ArrowLeft className="size-4" />
-            Hoan Research
+            My Portfolio
           </Link>
         </Button>
-        <div className="flex items-center gap-2">
-          <Button asChild variant="ghost" size="sm">
-            <Link href="/blog">Research notes</Link>
-          </Button>
-          <ThemeToggle />
-        </div>
+        <ThemeToggle />
       </div>
     </header>
   );

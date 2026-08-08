@@ -1,28 +1,62 @@
 ---
-title: "ESG-RAG-Index"
-abstract: "A reproducible retrieval and indexing pipeline for evidence-grounded analysis of corporate ESG disclosures."
-capability: "Data Engineering & Research Infrastructure"
-researchQuestion: "How can unstructured ESG disclosures be indexed for comparative research while preserving provenance and citation-level auditability?"
-contribution: "A research infrastructure layer that links every retrieved claim to document, page, reporting period, and extraction version."
-methodology: "Document ingestion, layout-aware parsing, metadata design, chunk evaluation, retrieval testing, and provenance tracking"
-dataset: "Corporate sustainability reports and associated ESG disclosures"
-findings: "The index design prioritizes evidence traceability and retrieval evaluation over unsourced generation, enabling reproducible comparison across issuers and periods."
-tools: "Python · document parsing · vector retrieval"
-status: "Research software prototype"
+title: "ESG-RAG-Index: Provenance-Aware Disclosure Retrieval"
+abstract: "A research-software prototype for parsing, indexing, retrieving, and exporting ESG disclosure evidence while preserving document and page provenance."
+capability: "Network Science & Research Infrastructure"
+researchQuestion: "How can heterogeneous corporate disclosures be prepared for ESG assessment while preserving traceable evidence and separating retrieval from manual scoring?"
+contribution: "Built a resumable document-processing and retrieval architecture, with source-controlled authorship and a verified 4,320-row financial-document chunk corpus."
+methodology: "Document parsing, chunking, BM25 and hybrid retrieval, metadata lineage, resumable manifests, retrieval diagnostics, and manual score import"
+dataset: "A verified 4,320-row financial-document chunk corpus with complete company, year, source-file, page, section, statement-type, and text fields"
+findings: "The implemented contribution is evidence preparation and retrieval infrastructure; no completed ESG score release or automated LLM scoring result is claimed."
+tools: "Python · Parquet · DuckDB · BM25 · document parsing · retrieval evaluation"
+status: "Verified research-software prototype"
 timeline: "2026"
 repository: "https://github.com/tthoan309-ux/ESG-RAG-index"
 featured: true
-order: 10
+order: 13
 ---
 
-## Infrastructure problem
+# ESG-RAG-Index: Provenance-Aware Disclosure Retrieval
 
-ESG reports are lengthy, heterogeneous, and difficult to compare. A useful research index must retrieve relevant evidence without separating a claim from its source context.
+## Overview
 
-## Pipeline design
+ESG-RAG-Index is a research-software prototype for preparing auditable evidence from annual, sustainability, ESG, and integrated reports. The implemented system parses documents, creates traceable chunks, builds reusable retrieval pools, exports evidence packages, and imports separately produced manual scores.
 
-The system ingests documents, preserves page structure, attaches issuer and reporting metadata, and versions every extraction. Retrieval tests use question sets and citation checks rather than relying on anecdotal outputs.
+## Problem Definition
 
-## Contribution
+How can heterogeneous corporate disclosures be prepared for ESG assessment while preserving traceable evidence and separating retrieval from scoring?
 
-Every result is designed to be traceable to a source document, page, reporting period, and pipeline version. This turns retrieval infrastructure into an auditable component of ESG research.
+## Economic or Technical Motivation
+
+An ESG index is only defensible when each score can be traced back to the disclosure that supports it. The project therefore treats provenance, cache recovery, retrieval diagnostics, and the boundary between evidence selection and scoring as first-class design requirements.
+
+## Data
+
+The verified `financial_chunks.parquet` artifact contains 4,320 rows and nine fields. Company, year, source file, page, section, statement type, financial-page flag, chunk identifier, and text are non-missing in every row. The available corpus spans document years recorded from 2015 to 2026, but it is a financial-document corpus rather than a completed multi-issuer ESG scoring release.
+
+## Methodology
+
+The pipeline supports incremental processing through SHA-256 file checks and resumable progress manifests. It creates parsed-report, chunk, embedding, evidence-warehouse, error, and runtime artifacts. Retrieval can run in BM25, hybrid, or hybrid-rerank modes, and reusable evidence pools are organized by environmental, social, and governance pillars.
+
+## Main Findings
+
+The verified result is the infrastructure itself: a provenance-preserving chunk corpus and a documented retrieval workflow. The available materials do not support claims about completed ESG scores, issuer rankings, or improvements in scoring accuracy.
+
+## Robustness, Validation, or Model Assessment
+
+The repository records retrieval runtime, cached evidence, progress state, and errors. It also separates manual scoring from the parser and retriever. No automated test suite or completed retrieval benchmark was located, so model-quality claims are withheld.
+
+## Tools and Technologies
+
+Python, Parquet, DuckDB, BM25, document parsing, metadata lineage, and retrieval diagnostics are directly demonstrated. Automated LLM scoring and a completed vector-retrieval benchmark are not claimed.
+
+## Limitations
+
+The scorer is intentionally disabled, manual scoring occurs outside the pipeline, no completed ESG index release is verified, and no project test suite was discovered. The current corpus alone cannot establish cross-company comparability.
+
+## Deliverables
+
+- Document parser, chunker, retriever, and score-import code
+- Verified 4,320-row provenance-rich chunk corpus
+- Resumable manifests, caches, error logs, and retrieval runtime outputs
+- Manual scoring codebook and batch-export workflow
+- Public repository documentation

@@ -1,0 +1,60 @@
+---
+title: "Geopolitical Risk, Supplier Concentration, and Fuel Import Volumes"
+abstract: "A completed country-panel econometric study of the nonlinear relationship between geopolitical risk, fuel-supplier concentration, and import volumes."
+capability: "International Trade Econometrics & Geoeconomic Systems"
+researchQuestion: "How are geopolitical risk and supplier concentration associated with national fuel-import volumes after accounting for macroeconomic demand and common time shocks?"
+contribution: "Constructed and analyzed the country-year panel and produced the Stata specifications and output; an individual contribution statement is not present in the available report materials."
+methodology: "Pooled OLS, random effects, country fixed effects with year effects, panel diagnostics, and Driscoll–Kraay fixed-effects inference"
+dataset: "714 country-year observations, 2001–2021, combining WITS fuel trade and concentration measures with geopolitical-risk and macroeconomic controls"
+findings: "The preferred fixed-effects and Driscoll–Kraay models estimate a positive linear and negative quadratic geopolitical-risk term, consistent with an inverted-U conditional association; supplier concentration is positively associated with import volume."
+tools: "Stata · panel data · Driscoll–Kraay · WITS · HHI"
+status: "Completed econometric study"
+timeline: "2001–2021 panel"
+featured: false
+order: 3
+---
+
+# Geopolitical Risk, Supplier Concentration, and Fuel Import Volumes
+
+## Overview
+
+This project studies how geopolitical risk and import-source concentration relate to fuel-import volumes across countries. It uses a balanced set of panel estimators and reports diagnostics for heteroskedasticity, serial correlation, and cross-sectional dependence.
+
+## Research Question
+
+How are geopolitical risk and supplier concentration associated with fuel-import volumes after controlling for GDP, population, energy use, trade openness, country effects, and year shocks?
+
+## Economic or Technical Motivation
+
+Geopolitical risk can initially induce precautionary purchases or inventory accumulation, while sufficiently high risk may disrupt logistics, finance, and supply. A quadratic specification tests this nonlinearity rather than imposing a constant marginal relationship.
+
+## Data
+
+The analytical table contains 714 country-year observations from 2001 to 2021. WITS trade files are used to construct fuel-import volumes and supplier HHI. Macroeconomic controls include GDP, population, energy use, and trade openness.
+
+## Methodology
+
+The executed workflow compares pooled OLS, random effects, country fixed effects with year effects, and fixed effects with Driscoll–Kraay standard errors. It also runs the Hausman test and panel diagnostics for heteroskedasticity, autocorrelation, and cross-sectional dependence.
+
+## Main Findings
+
+In the fixed-effects and Driscoll–Kraay specifications, the geopolitical-risk linear term is 0.909 and the squared term is -0.412; both are reported as statistically significant. This pattern is consistent with an inverted-U conditional association. Fuel-supplier HHI is 0.388 in the same models and is positively associated with import volume.
+
+## Robustness, Validation, or Model Assessment
+
+The interaction pattern is stable between conventional fixed effects and Driscoll–Kraay inference. Pooled OLS differs in sign, reinforcing the importance of country effects. The project reports model-selection and panel-dependence diagnostics rather than relying on one estimator.
+
+## Tools and Technologies
+
+Stata, WITS data, panel fixed effects, random effects, Driscoll–Kraay standard errors, and HHI construction are directly demonstrated.
+
+## Limitations
+
+The estimates are associational. Geopolitical-risk measures and import volumes may be jointly affected by omitted global shocks, and the positive HHI association should not be interpreted as a welfare effect.
+
+## Deliverables
+
+- Country-year fuel-import and concentration panels
+- Stata estimation and diagnostic scripts
+- Four-model regression table
+- Data-construction notebooks and source workbooks

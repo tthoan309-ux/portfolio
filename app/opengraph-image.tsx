@@ -1,6 +1,6 @@
 import { ImageResponse } from "next/og";
 
-export const alt = "Tran Thuan Hoan — Computational Economics Research";
+export const alt = "Trần Thuận Hoàn — Computational Economics Research";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -65,7 +65,7 @@ export default function OpenGraphImage() {
               lineHeight: 0.95,
             }}
           >
-            Tran Thuan Hoan
+            Trần Thuận Hoàn
           </div>
           <div
             style={{

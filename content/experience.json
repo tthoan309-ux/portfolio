@@ -1,25 +1,26 @@
 {
+  "intro": "My research practice has developed through a combination of independent analysis, student-led research activities, and collaborative work. These roles have given me experience in coordinating people, supporting research initiatives, and connecting economic questions with structured analytical work.",
   "experience": [
+    {
+      "organization": "Vietnam Institute for Advanced Study in Mathematics (VIASM)",
+      "role": "Academic Activities Organization Intern",
+      "type": "Academic experience",
+      "period": "June–August 2026",
+      "description": "Supported the organization of academic programs by coordinating participant information, preparing academic correspondence, managing research-related records, and assisting with program materials for international academic events. Organized VIASM activity data from 2012–2025 and helped structure materials examining the relationship between academic activities, public research spending, and scientific outputs."
+    },
     {
       "organization": "Young Researchers Club",
       "role": "Research and Development Department",
       "type": "Research experience",
-      "period": "Current",
-      "description": "Develop research concepts, review analytical approaches, and contribute to an interdisciplinary environment where student researchers turn early questions into tractable empirical studies."
+      "period": "2025–2026",
+      "description": "Through the Research and Development Department, I take part in developing research ideas, supporting academic activities, and helping transform broad interests into clearer research questions. This role complements my technical work in data preparation, econometrics, and empirical research design."
     },
     {
       "organization": "Global Economics Club",
       "role": "Research Department",
       "type": "Research experience",
-      "period": "Current",
-      "description": "Support economics research through evidence synthesis, quantitative analysis, and collaborative discussion of policy-relevant questions across global and Vietnamese contexts."
-    },
-    {
-      "organization": "G'Contest 2025",
-      "role": "Data Analysis Division, Organizing Committee",
-      "type": "Academic activity",
-      "period": "2025",
-      "description": "Designed analytical workflows for competition data, translated operational requirements into measurable indicators, and coordinated findings with the wider organizing committee."
+      "period": "2025–2026",
+      "description": "My work in the Research Department focuses on research support, economic analysis, and collaborative learning. It has strengthened my ability to discuss economic issues from different perspectives, organize research-related materials, and work with others on projects connected to international and development economics."
     }
   ],
   "leadership": [
@@ -27,7 +28,8 @@
       "organization": "International Economics Union (IEU)",
       "role": "Vice President",
       "period": "Current",
-      "description": "Coordinate research-oriented academic activities, support interdisciplinary collaboration, and help shape an intellectually rigorous community for International Economics students."
+      "description": "As Vice President, I contribute to the Union’s academic direction, internal coordination, and research-oriented activities. The role involves working with members across different projects, supporting the organization of academic initiatives, and helping create an environment where students can engage more seriously with international economics."
     }
-  ]
+  ],
+  "closing": "Together, these experiences have strengthened three parts of my research practice: asking better economic questions, working responsibly with collaborators, and communicating evidence clearly. They are not substitutes for empirical research, but they form the collaborative foundation behind the projects documented in this portfolio."
 }

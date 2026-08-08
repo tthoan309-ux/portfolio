@@ -1,6 +1,8 @@
 import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Sans, Inter, JetBrains_Mono } from "next/font/google";
 import { profile, siteConfig } from "@/data/site";
+import { CopyProtection } from "@/components/copy-protection";
+import { CvViewerProvider } from "@/components/cv-viewer";
 import "./globals.css";
 
 const heading = IBM_Plex_Sans({
@@ -23,22 +25,20 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Tran Thuan Hoan — Computational Economics Research",
-    template: "%s — Tran Thuan Hoan",
+    default: "Trần Thuận Hoàn — Empirical Economics Research",
+    template: "%s — Trần Thuận Hoàn",
   },
   description: siteConfig.description,
   alternates: { canonical: "/" },
   keywords: [
     "International Economics",
-    "Computational Economics",
     "Econometrics",
     "Machine Learning",
     "Data Engineering",
     "Research Software",
-    "Climate Economics",
-    "Innovation Economics",
-    "Data Science",
-    "Public Policy",
+    "International Trade",
+    "Firm-Level Data",
+    "Panel Data",
   ],
   authors: [{ name: profile.fullName }],
   creator: profile.fullName,
@@ -46,13 +46,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "/",
-    siteName: "Tran Thuan Hoan Research",
-    title: "Tran Thuan Hoan — Computational Economics Research",
+    siteName: "Trần Thuận Hoàn Research",
+    title: "Trần Thuận Hoàn — Empirical Economics Research",
     description: siteConfig.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Tran Thuan Hoan — Computational Economics Research",
+    title: "Trần Thuận Hoàn — Empirical Economics Research",
     description: siteConfig.description,
   },
   icons: {
@@ -90,13 +90,13 @@ export default function RootLayout({
     },
     knowsAbout: [
       "International Economics",
-      "Computational Economics",
+      "International Trade",
       "Machine Learning",
       "Data Engineering",
       "Research Software",
       "Econometrics",
-      "Climate Economics",
-      "Cryptography",
+      "Panel Data",
+      "Optimization",
     ],
     url: siteConfig.url,
     sameAs: [profile.linkedin, profile.github, profile.orcid],
@@ -116,7 +116,10 @@ export default function RootLayout({
             __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
           }}
         />
-        {children}
+        <CvViewerProvider>
+          <CopyProtection />
+          {children}
+        </CvViewerProvider>
       </body>
     </html>
   );
