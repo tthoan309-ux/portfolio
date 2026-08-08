@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import {
   motion,
   useMotionValue,
@@ -114,6 +115,22 @@ export function Hero() {
           className="border-t-2 border-slate-950 bg-white/80 dark:border-white dark:bg-slate-950/70"
           aria-label="Research snapshot"
         >
+          <figure className="mb-7">
+            <div className="relative aspect-square overflow-hidden bg-slate-200 dark:bg-slate-800">
+              <Image
+                src="/images/tran-thuan-hoan-portrait.jpg"
+                alt="Portrait of Trần Thuận Hoàn"
+                fill
+                priority
+                sizes="(min-width: 1024px) 34vw, (min-width: 640px) 70vw, 100vw"
+                className="object-cover object-[center_32%]"
+              />
+            </div>
+            <figcaption className="flex items-center justify-between border-b border-slate-200 py-3 font-mono text-[10px] tracking-[.08em] text-slate-500 uppercase dark:border-slate-800 dark:text-slate-400">
+              <span>Trần Thuận Hoàn</span>
+              <span>Hanoi, Vietnam</span>
+            </figcaption>
+          </figure>
           <div className="flex items-center justify-between border-b border-slate-200 py-5 dark:border-slate-800">
             <h2 className="text-sm font-semibold tracking-[.14em] uppercase">
               Research snapshot
