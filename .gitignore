@@ -44,12 +44,18 @@ yarn-error.log*
 
 # typescript
 next-env.d.ts
+*.tsbuildinfo
 /dist/
 /.wrangler/
 /outputs/
 /work/
 /tmp/
 /$tmp/
+
+# superseded local visualization exports
+/public/work/churn/xgboost-evaluation.png
+/public/work/air-quality/feature-importance.png
+/public/work/air-quality/predicted-vs-actual.png
 
 # Local audit evidence and recoverable pre-edit snapshots
 /_codex_backup/

@@ -5,13 +5,13 @@ import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { Button } from "@/components/ui/button";
-import { CommandPalette } from "@/components/command-palette";
+import { CvTrigger } from "@/components/cv-viewer";
 
 const links = [
   ["Education", "#education"],
-  ["Current research", "#current-research"],
-  ["Capabilities", "#capabilities"],
-  ["Case studies", "#case-studies"],
+  ["Research", "#research"],
+  ["Competencies", "#competencies"],
+  ["Experience", "#experience"],
 ];
 
 export function Header() {
@@ -31,7 +31,7 @@ export function Header() {
           </span>
         </Link>
         <nav
-          className="hidden items-center gap-1 md:flex"
+          className="hidden items-center gap-0.5 lg:flex"
           aria-label="Primary navigation"
         >
           {links.map(([label, href]) => (
@@ -39,13 +39,15 @@ export function Header() {
               <Link href={href}>{label}</Link>
             </Button>
           ))}
-          <CommandPalette />
+          <CvTrigger variant="ghost" size="sm">
+            CV
+          </CvTrigger>
           <ThemeToggle />
           <Button asChild size="sm" className="ml-2">
             <a href="#contact">Contact</a>
           </Button>
         </nav>
-        <div className="flex items-center md:hidden">
+        <div className="flex items-center lg:hidden">
           <ThemeToggle />
           <Button
             variant="ghost"
@@ -62,7 +64,7 @@ export function Header() {
       {open && (
         <nav
           id="mobile-navigation"
-          className="border-t border-slate-200 bg-white px-5 py-4 md:hidden dark:border-slate-800 dark:bg-slate-950"
+          className="border-t border-slate-200 bg-white px-5 py-4 lg:hidden dark:border-slate-800 dark:bg-slate-950"
           aria-label="Mobile navigation"
         >
           {links.map(([label, href]) => (
@@ -75,6 +77,20 @@ export function Header() {
               {label}
             </Link>
           ))}
+          <CvTrigger
+            variant="ghost"
+            className="h-auto w-full justify-start rounded-lg px-3 py-3"
+            onClick={() => setOpen(false)}
+          >
+            View CV
+          </CvTrigger>
+          <a
+            href="#contact"
+            onClick={() => setOpen(false)}
+            className="mt-2 block rounded-lg bg-slate-900 px-3 py-3 text-sm font-medium text-white focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none dark:bg-white dark:text-slate-950"
+          >
+            Contact
+          </a>
         </nav>
       )}
     </header>

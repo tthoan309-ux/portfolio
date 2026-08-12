@@ -2,10 +2,10 @@
   {
     "id": "trade-geoeconomics",
     "number": "01",
-    "title": "International Trade Econometrics & Geoeconomic Systems",
-    "description": "Studying sanctions, supply-chain dependence, import concentration, and industrial upgrading with structural-gravity models, panel evidence, and value-chain analysis.",
+    "title": "International Trade & Geoeconomics",
+    "description": "I study sanctions, supply-chain dependence, import concentration, and industrial upgrading using trade panels and value-chain evidence.",
     "methods": "PPML · high-dimensional fixed effects · panel models · value-chain analysis",
-    "caseStudies": [
+    "projects": [
       "sanctions-trade-reallocation",
       "vietnam-automotive-value-chains",
       "fuel-import-geopolitical-risk"
@@ -14,10 +14,10 @@
   {
     "id": "firm-finance",
     "number": "02",
-    "title": "Firm-Level Finance & Panel Econometrics",
-    "description": "Building auditable Vietnamese firm panels and testing how accounting composition, operating efficiency, cash realization, and profitability evolve within firms.",
+    "title": "Firm-Level Finance & Panel Data",
+    "description": "I use Vietnamese firm panels to examine profitability, operating efficiency, earnings composition, and cash-flow outcomes.",
     "methods": "Firm fixed effects · clustered inference · diagnostic-led model selection",
-    "caseStudies": [
+    "projects": [
       "operating-synergy-profitability",
       "earnings-composition-persistence",
       "short-horizon-claim-concentration",
@@ -27,18 +27,18 @@
   {
     "id": "research-infrastructure",
     "number": "03",
-    "title": "Data Engineering & Computational Research Infrastructure",
-    "description": "Building auditable systems that turn heterogeneous web data, financial statements, and public documents into versioned research corpora and analysis-ready evidence.",
+    "title": "Research Data Engineering",
+    "description": "I build reproducible pipelines that turn web data, financial statements, and public documents into analysis-ready datasets.",
     "methods": "Resumable collection · schema normalization · provenance · PDF extraction · targeted OCR",
-    "caseStudies": ["financial-distress-research-pipeline"]
+    "projects": ["financial-distress-research-pipeline"]
   },
   {
     "id": "machine-learning",
     "number": "04",
-    "title": "Machine Learning & Computational Modeling",
-    "description": "Applying supervised learning, information retrieval, and unsupervised graph methods as research instruments, with reproducible evaluation and explicit limits on what each model establishes.",
+    "title": "Machine Learning for Economic Research",
+    "description": "I apply classification, information retrieval, and graph methods to economic and document data, with temporal validation and model diagnostics.",
     "methods": "Temporal classification · calibration · hybrid retrieval · document embeddings · Leiden community detection",
-    "caseStudies": [
+    "projects": [
       "financial-distress-research-pipeline",
       "esg-rag-index",
       "trade-community-detection"
@@ -47,21 +47,18 @@
   {
     "id": "environment-development",
     "number": "05",
-    "title": "Environmental & Development Econometrics",
-    "description": "Examining green growth and productive capabilities through cross-country panel and comparative econometric designs with explicit limits on causal interpretation.",
+    "title": "Development & Environmental Economics",
+    "description": "I examine green growth and productive capabilities with cross-country panels and comparative econometric models.",
     "methods": "Country fixed effects · interaction models · cross-sectional OLS · robustness diagnostics",
-    "caseStudies": [
-      "debt-carbon-green-growth",
-      "economic-complexity-determinants"
-    ]
+    "projects": ["debt-carbon-green-growth", "economic-complexity-determinants"]
   },
   {
     "id": "network-infrastructure",
     "number": "06",
-    "title": "Network Science & Research Infrastructure",
-    "description": "Designing reproducible systems for trade networks, statistical data releases, and provenance-aware document research.",
+    "title": "Trade Networks & Research Infrastructure",
+    "description": "This work covers trade-network analysis, versioned statistical datasets, and document-retrieval infrastructure.",
     "methods": "Leiden communities · data provenance · schema validation · versioned pipelines",
-    "caseStudies": [
+    "projects": [
       "trade-community-detection",
       "vietnam-eu-cn8-trade-dataset",
       "esg-rag-index"
@@ -70,9 +67,9 @@
   {
     "id": "optimization",
     "number": "07",
-    "title": "Optimization & Decision Science",
-    "description": "Formulating operational trade-offs explicitly and evaluating search algorithms against reproducible baselines and sensitivity checks.",
+    "title": "Optimization",
+    "description": "I formulate routing and scheduling problems and evaluate search algorithms against fixed baselines and repeated runs.",
     "methods": "Adaptive metaheuristics · baseline comparison · multi-seed evaluation",
-    "caseStudies": ["delivery-alns"]
+    "projects": ["delivery-alns"]
   }
 ]

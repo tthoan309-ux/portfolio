@@ -1,0 +1,100 @@
+[
+  {
+    "id": "empirical-research",
+    "number": "01",
+    "title": "Empirical economics",
+    "summary": "Research design, panel econometrics, trade analysis, and careful interpretation of economic evidence.",
+    "methods": [
+      "PPML",
+      "Fixed effects",
+      "Panel data",
+      "Robustness diagnostics"
+    ],
+    "evidence": [
+      "Trade reallocation under sanctions",
+      "Fuel import geopolitical risk",
+      "Debt, carbon intensity, and green growth"
+    ]
+  },
+  {
+    "id": "research-engineering",
+    "number": "02",
+    "title": "Research data engineering",
+    "summary": "Reproducible systems for collecting, normalizing, validating, and tracing economic and document data.",
+    "methods": [
+      "Python pipelines",
+      "Schema validation",
+      "OCR",
+      "Data provenance"
+    ],
+    "evidence": [
+      "Vietnam financial-disclosure pipeline",
+      "Vietnam–EU monthly CN8 dataset",
+      "ESG-RAG-Index"
+    ]
+  },
+  {
+    "id": "machine-learning",
+    "number": "03",
+    "title": "Machine learning",
+    "summary": "Predictive modeling with explicit validation, model comparison, calibration, and interpretable outputs.",
+    "methods": [
+      "XGBoost",
+      "Random forest",
+      "Logistic regression",
+      "Temporal validation"
+    ],
+    "evidence": [
+      "Financial-distress research pipeline",
+      "Customer churn modeling",
+      "Air-quality and health prediction"
+    ]
+  },
+  {
+    "id": "business-intelligence",
+    "number": "04",
+    "title": "Business intelligence",
+    "summary": "Decision-oriented analysis that turns operational data into compact, inspectable dashboard views.",
+    "methods": [
+      "Power BI",
+      "KPI design",
+      "Exploratory analysis",
+      "Dashboard communication"
+    ],
+    "evidence": ["Commercial airline operational analytics"]
+  },
+  {
+    "id": "computational-methods",
+    "number": "05",
+    "title": "Computational methods",
+    "summary": "Graph analysis, retrieval systems, and optimization methods for structured economic problems.",
+    "methods": [
+      "Leiden communities",
+      "Hybrid retrieval",
+      "ALNS",
+      "Multi-seed evaluation"
+    ],
+    "evidence": [
+      "Dynamic trade communities",
+      "ESG-RAG-Index",
+      "Multi-period delivery routing"
+    ]
+  },
+  {
+    "id": "research-communication",
+    "number": "06",
+    "title": "Research communication",
+    "summary": "Tables, figures, dashboards, and technical writing designed to make assumptions and results easier to audit.",
+    "methods": [
+      "Data visualization",
+      "Research writing",
+      "Technical documentation",
+      "Evidence synthesis"
+    ],
+    "evidence": [
+      "Research posters",
+      "Model-assessment figures",
+      "Interactive portfolio summaries"
+    ]
+  }
+]

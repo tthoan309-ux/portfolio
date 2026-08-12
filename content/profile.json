@@ -25,8 +25,8 @@
   "linkedin": "https://www.linkedin.com/in/1marcuz1/",
   "github": "https://github.com/tthoan309-ux",
   "orcid": "https://orcid.org/0009-0007-6229-8585",
-  "headline": "Building empirical systems that make economic evidence traceable, testable, and resistant to overstatement.",
-  "subheadline": "My work focuses on international and development economics, spanning product-level trade, Vietnamese firm-level data, panel econometrics, predictive modeling, and reproducible research infrastructure.",
+  "headline": "Empirical research on trade, firms, and economic adjustment.",
+  "subheadline": "I work with product-level trade data, Vietnamese firm panels, econometric models, and machine-learning methods to study how economies and firms respond to change. My long-term goal is to pursue an academic path in mathematical economics and econometrics.",
   "statement": "I work from economic questions toward auditable evidence: constructing datasets, testing econometric designs, evaluating predictive systems, and reporting completed results within the limits supported by the data.",
   "coursework": [
     { "name": "Advanced Mathematics", "score": "10.0" },

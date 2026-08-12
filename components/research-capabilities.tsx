@@ -11,7 +11,7 @@ type Capability = {
   title: string;
   description: string;
   methods: string;
-  caseStudies: string[];
+  projects: string[];
 };
 
 function EvidenceRow({ project }: { project: ResearchMeta }) {
@@ -53,7 +53,7 @@ function EvidenceRow({ project }: { project: ResearchMeta }) {
         <div className="flex flex-col justify-between gap-4">
           <div>
             <p className="text-[10px] font-semibold tracking-[.14em] text-slate-400 uppercase">
-              Tools · small emphasis
+              Tools
             </p>
             <p className="mt-2 font-mono text-xs leading-5 text-slate-500">
               {project.tools}
@@ -64,7 +64,7 @@ function EvidenceRow({ project }: { project: ResearchMeta }) {
               href={`/research/${project.slug}`}
               className="inline-flex w-fit items-center gap-2 text-sm font-semibold text-blue-700 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none dark:text-blue-400"
             >
-              Full case study <ArrowUpRight className="size-4" />
+              View research <ArrowUpRight className="size-4" />
             </Link>
             {project.repository && (
               <a
@@ -103,7 +103,7 @@ export function ResearchCapabilities({
               .includes(normalizedQuery);
           const matchedProjects = projects.filter(
             (project) =>
-              capability.caseStudies.includes(project.slug) &&
+              capability.projects.includes(project.slug) &&
               (capabilityMatch ||
                 `${project.title} ${project.abstract} ${project.researchQuestion} ${project.contribution} ${project.methodology} ${project.dataset} ${project.findings} ${project.tools}`
                   .toLowerCase()
@@ -119,11 +119,11 @@ export function ResearchCapabilities({
     <div>
       <label className="mb-10 flex max-w-xl items-center gap-3 border-b border-slate-300 py-3 focus-within:border-blue-600 dark:border-slate-700">
         <Search className="size-4 text-slate-400" aria-hidden="true" />
-        <span className="sr-only">Search research capabilities</span>
+        <span className="sr-only">Search research areas</span>
         <input
           value={query}
           onChange={(event) => setQuery(event.target.value)}
-          placeholder="Search questions, methods, datasets, or systems"
+          placeholder="Search projects, methods, or datasets"
           className="w-full bg-transparent text-sm outline-none placeholder:text-slate-400"
         />
       </label>
@@ -164,7 +164,7 @@ export function ResearchCapabilities({
       </div>
       {visibleCapabilities.length === 0 && (
         <p className="border-y border-slate-200 py-12 text-center text-sm text-slate-500 dark:border-slate-800">
-          No research evidence matches “{query}”.
+          No projects match “{query}”.
         </p>
       )}
     </div>

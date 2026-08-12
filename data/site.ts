@@ -3,7 +3,8 @@ import experience from "@/content/experience.json";
 import publications from "@/content/publications.json";
 import activities from "@/content/activities.json";
 import capabilities from "@/content/capabilities.json";
-import researchAgenda from "@/content/research-agenda.json";
+import competencies from "@/content/competencies.json";
+import appliedWork from "@/content/applied-work.json";
 
 export {
   profile,
@@ -11,7 +12,8 @@ export {
   publications,
   activities,
   capabilities,
-  researchAgenda,
+  competencies,
+  appliedWork,
 };
 
 const vercelHost =

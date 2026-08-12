@@ -1,0 +1,37 @@
+[
+  {
+    "id": "airline-analytics",
+    "title": "Commercial Airline Operational Analytics",
+    "category": "Business intelligence",
+    "status": "Completed course project",
+    "course": "FDC105",
+    "summary": "A Power BI analysis of booking behavior, journey structure, seat class, travel purpose, and ticket values across 10,000 commercial-flight records.",
+    "deliverable": "Power BI dashboard (.pbix)",
+    "tools": ["Power BI", "Excel", "Exploratory analysis"],
+    "visual": "dashboard"
+  },
+  {
+    "id": "customer-churn",
+    "title": "Customer Churn Modeling",
+    "category": "Machine learning",
+    "status": "Completed course project",
+    "course": "FDC105",
+    "summary": "A classification workflow comparing logistic regression, random forest, and XGBoost on behavioral and transaction features, with threshold-aware evaluation.",
+    "deliverable": "Executed notebook and model-assessment figures",
+    "tools": ["Python", "XGBoost", "Random forest", "Logistic regression"],
+    "visual": "/work/churn/xgboost-evaluation-redesign.svg",
+    "metric": "XGBoost test AUC 0.926; accuracy 85.8% in the recorded notebook output."
+  },
+  {
+    "id": "air-quality-health",
+    "title": "Air Quality & Health Prediction",
+    "category": "Machine learning",
+    "status": "Completed analytical project",
+    "course": "FDC104",
+    "summary": "A regression workflow linking air-quality and climate features to hospital-admission outcomes, with global and city-level assessment outputs.",
+    "deliverable": "Executed notebooks, metrics tables, and diagnostic figures",
+    "tools": ["Python", "Regression", "Model diagnostics", "Visualization"],
+    "visual": "/work/air-quality/rmse-comparison.svg",
+    "metric": "Recorded global holdout metrics: RMSE 3.079, MAE 2.443, R² 0.316."
+  }
+]

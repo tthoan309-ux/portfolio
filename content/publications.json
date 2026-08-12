@@ -3,7 +3,7 @@
     {
       "title": "Energy Transition, Green Growth, and Public Attention",
       "status": "Research in preparation",
-      "abstract": "A planned empirical study currently limited to literature review, data assembly, and measurement design. No estimated result, completed manuscript, or submission is claimed.",
+      "abstract": "Literature review, data assembly, and measurement design for a study of energy transition, green growth, and public attention. Estimation has not yet begun.",
       "expectedSubmission": "Not yet scheduled",
       "stages": [
         { "label": "Literature review", "status": "active" },
@@ -16,7 +16,7 @@
     {
       "title": "Inventory Buffers under Firm-Level Operating and Input-Cost Shocks",
       "status": "Work in progress",
-      "abstract": "An ongoing firm-level study of how inventory buffers adjust to operating conditions and external input-cost shocks. Existing exploratory outputs are being used to refine exposure measurement, placebo design, and the empirical specification; no completed mechanism or causal finding is claimed.",
+      "abstract": "Building a firm-level panel to study how inventory buffers respond to operating conditions and input-cost shocks. Current work focuses on exposure measurement, placebo design, and model specification.",
       "expectedSubmission": "Not yet scheduled",
       "stages": [
         { "label": "Firm-panel construction", "status": "active" },

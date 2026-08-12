@@ -7,7 +7,7 @@ A content-driven academic website for Trần Thuận Hoàn (preferred name: Marc
 - Next.js 15 App Router and React 19
 - TypeScript and Tailwind CSS v4
 - shadcn/ui-style primitives, Framer Motion, and Lucide
-- JSON content collections and MDX research notes/case studies
+- JSON content collections and MDX research pages
 - pnpm, ESLint, and Prettier
 
 ## Run locally on Windows PowerShell
@@ -34,10 +34,11 @@ The site is edited through `content/`:
 
 - `profile.json` — identity, education, languages, and coursework
 - `experience.json` — research experience and leadership
-- `capabilities.json` — research capability domains and their evidence
-- `research-agenda.json` — current and evolving research directions
+- `capabilities.json` — research topics and their research entries
+- `competencies.json` — broader competency areas and supporting evidence
+- `applied-work.json` — coursework, dashboards, and machine-learning work shown separately from research
 - `publications.json` — research in preparation and research notes
-- `research/*.mdx` — research case studies
+- `research/*.mdx` — individual research pages
 - `posts/*.mdx` — searchable research notes
 
 Adding an MDX file with the required frontmatter automatically creates a research page and sitemap entry. Add its slug to `capabilities.json` to place it under a capability on the homepage.

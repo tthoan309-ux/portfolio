@@ -134,11 +134,13 @@ export function CvTrigger({
   variant = "outline",
   size,
   className,
+  onClick,
 }: {
   children?: ReactNode;
   variant?: ButtonProps["variant"];
   size?: ButtonProps["size"];
   className?: string;
+  onClick?: () => void;
 }) {
   const { openCv } = useCvViewer();
   return (
@@ -147,7 +149,10 @@ export function CvTrigger({
       variant={variant}
       size={size}
       className={className}
-      onClick={openCv}
+      onClick={() => {
+        onClick?.();
+        openCv();
+      }}
     >
       {children ?? (
         <>

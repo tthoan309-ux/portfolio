@@ -61,17 +61,18 @@ export default async function ResearchPage({
 
   const evidence = [
     ["Research question", project.researchQuestion],
-    ["Contribution", project.contribution],
     ["Methodology", project.methodology],
     ["Dataset", project.dataset],
     ["Main finding", project.findings],
-    ["Tools", project.tools],
   ];
 
   return (
     <>
       <JournalHeader />
-      <main id="main-content" className="mx-auto max-w-5xl px-5 py-14 sm:py-24">
+      <main
+        id="main-content"
+        className="mx-auto max-w-7xl px-5 py-14 sm:py-24 lg:px-8"
+      >
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -79,12 +80,12 @@ export default async function ResearchPage({
           }}
         />
         <Link
-          href="/#capabilities"
+          href="/#research"
           className="inline-flex items-center gap-2 text-sm text-slate-500 hover:text-blue-700 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none dark:hover:text-blue-400"
         >
-          <ArrowLeft className="size-4" /> All research capabilities
+          <ArrowLeft className="size-4" /> Research archive
         </Link>
-        <header className="mt-10 border-t-2 border-slate-950 pt-7 dark:border-white">
+        <header className="mt-10 border-t-[6px] border-blue-700 pt-7 dark:border-blue-400">
           <div className="flex flex-wrap items-center justify-between gap-3 font-mono text-[10px] tracking-[.12em] uppercase">
             <span className="text-blue-700 dark:text-blue-400">
               {project.capability}
@@ -93,10 +94,20 @@ export default async function ResearchPage({
               {project.timeline} · {project.status}
             </span>
           </div>
-          <h1 className="mt-8 max-w-4xl text-4xl font-semibold tracking-[-.045em] text-balance sm:text-7xl">
-            {project.title}
-          </h1>
-          <p className="mt-7 max-w-3xl text-lg leading-8 text-slate-600 dark:text-slate-400">
+          <div className="mt-8 grid gap-8 lg:grid-cols-[1fr_290px] lg:items-end">
+            <h1 className="max-w-5xl text-4xl font-semibold tracking-[-.045em] text-balance sm:text-7xl">
+              {project.title}
+            </h1>
+            <div className="border-l border-slate-300 pl-5 dark:border-slate-700">
+              <p className="text-[10px] font-semibold tracking-[.14em] text-slate-400 uppercase">
+                Poster summary
+              </p>
+              <p className="mt-3 font-mono text-xs leading-6 text-slate-600 dark:text-slate-400">
+                {project.tools}
+              </p>
+            </div>
+          </div>
+          <p className="mt-8 max-w-4xl text-lg leading-8 text-slate-600 dark:text-slate-400">
             {project.abstract}
           </p>
           {(project.repository || project.paper) && (
@@ -117,25 +128,39 @@ export default async function ResearchPage({
         </header>
 
         <section
-          className="mt-14 grid border-t border-l border-slate-200 sm:grid-cols-2 lg:grid-cols-3 dark:border-slate-800"
+          className="mt-14 grid border-t border-l border-slate-300 sm:grid-cols-2 dark:border-slate-700"
           aria-label="Research evidence summary"
         >
-          {evidence.map(([label, value]) => (
+          {evidence.map(([label, value], index) => (
             <div
               key={label}
-              className="border-r border-b border-slate-200 bg-white p-6 dark:border-slate-800 dark:bg-slate-950"
+              className="relative min-h-52 overflow-hidden border-r border-b border-slate-300 bg-white p-6 sm:p-8 dark:border-slate-700 dark:bg-slate-950"
             >
+              <span className="absolute top-5 right-5 font-mono text-[10px] text-slate-300 dark:text-slate-700">
+                0{index + 1}
+              </span>
               <h2 className="text-[10px] font-semibold tracking-[.15em] text-slate-400 uppercase">
                 {label}
               </h2>
-              <p className="mt-3 text-sm leading-6">{value}</p>
+              <p className="mt-7 max-w-xl text-base leading-7">{value}</p>
             </div>
           ))}
         </section>
 
-        <article className="prose-research mt-16 max-w-3xl border-t border-slate-200 pt-10 dark:border-slate-800">
-          <MDXRemote source={project.content} />
-        </article>
+        <div className="mt-20 grid gap-10 lg:grid-cols-[220px_1fr]">
+          <aside className="self-start border-t-2 border-slate-950 pt-5 dark:border-white">
+            <p className="font-mono text-[10px] tracking-[.14em] text-slate-400 uppercase">
+              Full research record
+            </p>
+            <p className="mt-4 text-sm leading-6 text-slate-500">
+              Methods, limitations, validation, and deliverables from the
+              underlying MDX record.
+            </p>
+          </aside>
+          <article className="prose-research max-w-3xl border-t border-slate-200 pt-10 dark:border-slate-800">
+            <MDXRemote source={project.content} />
+          </article>
+        </div>
       </main>
     </>
   );

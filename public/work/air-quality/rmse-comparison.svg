@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="675" viewBox="0 0 1200 675" role="img" aria-labelledby="title desc">
+  <title id="title">RMSE comparison by city</title>
+  <desc id="desc">Horizontal bar chart comparing holdout RMSE for eight city models, with a global model reference of 3.079.</desc>
+  <rect width="1200" height="675" fill="#f8fafc"/>
+  <text x="70" y="72" fill="#0f172a" font-family="Inter, Arial, sans-serif" font-size="32" font-weight="700">RMSE comparison by city</text>
+  <text x="70" y="105" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="16">Hospital-admission prediction · recorded holdout results</text>
+
+  <g stroke="#e2e8f0" stroke-width="1">
+    <line x1="300" y1="145" x2="300" y2="585"/>
+    <line x1="514" y1="145" x2="514" y2="585"/>
+    <line x1="729" y1="145" x2="729" y2="585"/>
+    <line x1="943" y1="145" x2="943" y2="585"/>
+  </g>
+  <g fill="#94a3b8" font-family="JetBrains Mono, monospace" font-size="13">
+    <text x="295" y="614">0</text>
+    <text x="509" y="614">1</text>
+    <text x="724" y="614">2</text>
+    <text x="938" y="614">3</text>
+    <text x="1127" y="614">RMSE</text>
+  </g>
+
+  <g fill="#334155" font-family="Inter, Arial, sans-serif" font-size="16">
+    <text x="70" y="177">London</text>
+    <text x="70" y="229">Beijing</text>
+    <text x="70" y="281">Delhi</text>
+    <text x="70" y="333">Mexico City</text>
+    <text x="70" y="385">Los Angeles</text>
+    <text x="70" y="437">Tokyo</text>
+    <text x="70" y="489">São Paulo</text>
+    <text x="70" y="541">Cairo</text>
+  </g>
+
+  <g fill="#2563eb">
+    <rect x="300" y="154" width="666" height="30" rx="3"/>
+    <rect x="300" y="206" width="663" height="30" rx="3"/>
+    <rect x="300" y="258" width="675" height="30" rx="3"/>
+    <rect x="300" y="310" width="676" height="30" rx="3"/>
+    <rect x="300" y="362" width="666" height="30" rx="3"/>
+    <rect x="300" y="414" width="675" height="30" rx="3"/>
+    <rect x="300" y="466" width="661" height="30" rx="3"/>
+    <rect x="300" y="518" width="720" height="30" rx="3"/>
+  </g>
+
+  <g fill="#0f172a" font-family="JetBrains Mono, monospace" font-size="14" font-weight="600">
+    <text x="980" y="175">3.106</text>
+    <text x="977" y="227">3.095</text>
+    <text x="989" y="279">3.152</text>
+    <text x="990" y="331">3.153</text>
+    <text x="980" y="383">3.107</text>
+    <text x="989" y="435">3.149</text>
+    <text x="975" y="487">3.085</text>
+    <text x="1034" y="539">3.358</text>
+  </g>
+
+  <line x1="960" y1="137" x2="960" y2="570" stroke="#14b8a6" stroke-width="3" stroke-dasharray="8 7"/>
+  <rect x="825" y="121" width="270" height="31" rx="15.5" fill="#ccfbf1"/>
+  <circle cx="847" cy="136.5" r="5" fill="#14b8a6"/>
+  <text x="860" y="142" fill="#0f766e" font-family="JetBrains Mono, monospace" font-size="12" font-weight="600">GLOBAL MODEL RMSE 3.079</text>
+
+  <text x="70" y="646" fill="#64748b" font-family="Inter, Arial, sans-serif" font-size="13">Lower RMSE indicates smaller prediction error. Values are read from the project’s saved per-city and global metrics.</text>
+</svg>

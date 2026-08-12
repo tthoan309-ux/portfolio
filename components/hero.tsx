@@ -13,15 +13,21 @@ import { CvTrigger } from "@/components/cv-viewer";
 import { Button } from "@/components/ui/button";
 import { profile } from "@/data/site";
 
-const snapshot = [
+const snapshot: Array<[string, string | string[]]> = [
   ["Current status", "Undergraduate Researcher in International Economics"],
   [
     "Current focus",
-    "Trade adjustment, firm-level data, and applied econometrics",
+    "Trade adjustment and firm-level responses to economic shocks",
   ],
   [
     "Research areas",
-    "International trade · Development economics · Firm-level analysis · Panel econometrics · Research data engineering",
+    [
+      "International trade",
+      "Development economics",
+      "Firm-level analysis",
+      "Panel econometrics",
+      "Research data engineering",
+    ],
   ],
   ["Expected graduation", profile.expectedGraduation],
   ["Current GPA", profile.gpa],
@@ -67,7 +73,7 @@ export function Hero() {
               className="size-2 rounded-full bg-teal-500"
               aria-hidden="true"
             />
-            Hanoi · International Economics · Marcuz
+            This portfolio belongs to
           </div>
           <h1
             id="hero-title"
@@ -88,8 +94,8 @@ export function Hero() {
           </p>
           <div className="mt-10 flex flex-wrap gap-3">
             <Button asChild>
-              <a href="#current-research">
-                Current research <ArrowDown className="size-4" />
+              <a href="#research">
+                Open research archive <ArrowDown className="size-4" />
               </a>
             </Button>
             <CvTrigger variant="outline">
@@ -143,10 +149,23 @@ export function Hero() {
             {snapshot.map(([label, value]) => (
               <div
                 key={label}
-                className="grid grid-cols-[115px_1fr] gap-5 py-4"
+                className={`gap-5 py-4 ${Array.isArray(value) ? "block" : "grid grid-cols-[115px_1fr]"}`}
               >
                 <dt className="text-xs leading-5 text-slate-500">{label}</dt>
-                <dd className="text-sm leading-5 font-medium">{value}</dd>
+                {Array.isArray(value) ? (
+                  <dd className="mt-3 flex flex-wrap gap-2">
+                    {value.map((area) => (
+                      <span
+                        key={area}
+                        className="border border-slate-200 bg-slate-50 px-2.5 py-1.5 text-[11px] leading-4 font-medium text-slate-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300"
+                      >
+                        {area}
+                      </span>
+                    ))}
+                  </dd>
+                ) : (
+                  <dd className="text-sm leading-5 font-medium">{value}</dd>
+                )}
               </div>
             ))}
           </dl>
