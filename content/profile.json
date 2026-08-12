@@ -11,6 +11,16 @@
   "expectedGraduation": "September 2027",
   "gpa": "3.72 / 4.00",
   "ielts": "7.0",
+  "scholarships": [
+    {
+      "name": "FTU Academic Encouragement Scholarship",
+      "period": "Semester 1, 2024–2025"
+    },
+    {
+      "name": "FTU Academic Encouragement Scholarship",
+      "period": "Semester 2, 2024–2025"
+    }
+  ],
   "email": "tthoan309@gmail.com",
   "linkedin": "https://www.linkedin.com/in/1marcuz1/",
   "github": "https://github.com/tthoan309-ux",

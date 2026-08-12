@@ -117,6 +117,19 @@ export default function Home() {
             </div>
             <div>
               <p className="text-[10px] font-semibold tracking-[.14em] text-slate-400 uppercase">
+                Academic scholarships
+              </p>
+              <div className="mt-5 divide-y divide-slate-200 border-y border-slate-200 dark:divide-slate-800 dark:border-slate-800">
+                {profile.scholarships.map((scholarship) => (
+                  <div key={scholarship.period} className="py-4">
+                    <p className="text-sm font-medium">{scholarship.name}</p>
+                    <p className="mt-1 font-mono text-[11px] text-blue-700 dark:text-blue-400">
+                      {scholarship.period}
+                    </p>
+                  </div>
+                ))}
+              </div>
+              <p className="mt-8 text-[10px] font-semibold tracking-[.14em] text-slate-400 uppercase">
                 Relevant coursework
               </p>
               <div className="mt-5 divide-y divide-slate-200 border-y border-slate-200 dark:divide-slate-800 dark:border-slate-800">
