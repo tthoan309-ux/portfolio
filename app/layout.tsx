@@ -25,8 +25,8 @@ const mono = JetBrains_Mono({
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
-    default: "Trần Thuận Hoàn — Empirical Economics Research",
-    template: "%s — Trần Thuận Hoàn",
+    default: "Trần Thuận Hoàn Portfolio",
+    template: "%s — Trần Thuận Hoàn Portfolio",
   },
   description: siteConfig.description,
   alternates: { canonical: "/" },
@@ -46,13 +46,13 @@ export const metadata: Metadata = {
     type: "website",
     locale: "en_US",
     url: "/",
-    siteName: "Trần Thuận Hoàn Research",
-    title: "Trần Thuận Hoàn — Empirical Economics Research",
+    siteName: "Trần Thuận Hoàn Portfolio",
+    title: "Trần Thuận Hoàn Portfolio",
     description: siteConfig.description,
   },
   twitter: {
     card: "summary_large_image",
-    title: "Trần Thuận Hoàn — Empirical Economics Research",
+    title: "Trần Thuận Hoàn Portfolio",
     description: siteConfig.description,
   },
   icons: {
