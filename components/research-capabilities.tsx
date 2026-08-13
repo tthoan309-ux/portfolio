@@ -33,7 +33,6 @@ function EvidenceRow({ project }: { project: ResearchMeta }) {
       </summary>
       <div className="grid gap-6 pb-7 sm:grid-cols-2 lg:grid-cols-3">
         {[
-          ["Contribution", project.contribution],
           ["Method", project.methodology],
           ["Dataset", project.dataset],
           ["Main finding", project.findings],
@@ -105,7 +104,7 @@ export function ResearchCapabilities({
             (project) =>
               capability.projects.includes(project.slug) &&
               (capabilityMatch ||
-                `${project.title} ${project.abstract} ${project.researchQuestion} ${project.contribution} ${project.methodology} ${project.dataset} ${project.findings} ${project.tools}`
+                `${project.title} ${project.abstract} ${project.researchQuestion} ${project.methodology} ${project.dataset} ${project.findings} ${project.tools}`
                   .toLowerCase()
                   .includes(normalizedQuery)),
           );
@@ -133,25 +132,25 @@ export function ResearchCapabilities({
           <article
             key={capability.id}
             id={capability.id}
-            className="scroll-mt-24 border border-slate-200 bg-white px-5 sm:px-8 dark:border-slate-800 dark:bg-slate-950"
+            className="scroll-mt-24 overflow-hidden border border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-950"
           >
-            <header className="grid gap-5 border-b border-slate-200 py-8 lg:grid-cols-[70px_1fr_1fr] lg:items-start dark:border-slate-800">
-              <span className="font-mono text-xs text-blue-700 dark:text-blue-400">
-                C/{capability.number}
+            <header className="relative grid gap-5 border-b border-l-4 border-blue-200 border-l-blue-700 bg-blue-50/90 px-5 py-7 shadow-[0_14px_36px_-30px_rgba(30,58,95,.8)] sm:px-8 lg:grid-cols-[100px_1fr_1fr] lg:items-start dark:border-blue-900 dark:border-l-blue-400 dark:bg-blue-950/35">
+              <span className="inline-flex h-8 w-fit items-center rounded-full bg-blue-700 px-3 font-mono text-[10px] font-semibold tracking-[.1em] text-white uppercase dark:bg-blue-400 dark:text-slate-950">
+                Capability {Number(capability.number)}
               </span>
               <div>
-                <h3 className="text-2xl font-semibold tracking-[-.03em]">
+                <h3 className="text-2xl font-semibold tracking-[-.03em] text-slate-950 dark:text-white">
                   {capability.title}
                 </h3>
-                <p className="mt-3 font-mono text-[11px] leading-5 text-slate-400 uppercase">
+                <p className="mt-3 font-mono text-[11px] leading-5 text-blue-700/70 uppercase dark:text-blue-300/75">
                   {capability.methods}
                 </p>
               </div>
-              <p className="text-sm leading-6 text-slate-600 dark:text-slate-400">
+              <p className="border-t border-blue-200 pt-4 text-sm leading-6 text-slate-700 lg:border-t-0 lg:border-l lg:pt-0 lg:pl-6 dark:border-blue-800 dark:text-slate-300">
                 {capability.description}
               </p>
             </header>
-            <div className="lg:pl-[70px]">
+            <div className="px-5 sm:px-8 lg:pl-[140px]">
               {capability.projects.map((project) => (
                 <EvidenceRow
                   key={`${capability.id}-${project.slug}`}

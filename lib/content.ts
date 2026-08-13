@@ -18,7 +18,6 @@ export type ResearchMeta = {
   abstract: string;
   capability: string;
   researchQuestion: string;
-  contribution: string;
   methodology: string;
   dataset: string;
   findings: string;

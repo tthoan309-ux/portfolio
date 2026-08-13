@@ -33,12 +33,6 @@ const snapshot: Array<[string, string | string[]]> = [
   ["Current GPA", profile.gpa],
 ];
 
-const researchLogic = [
-  ["Research lens", "Economic adjustment"],
-  ["Evidence", "Trade & firm panels"],
-  ["Approach", "Econometrics + ML"],
-] as const;
-
 export function Hero() {
   const reduceMotion = useReducedMotion();
   const pointerX = useMotionValue(0);
@@ -157,28 +151,6 @@ export function Hero() {
                 LinkedIn <Linkedin className="size-4" />
               </a>
             </Button>
-          </div>
-          <div
-            className="mt-8 grid max-w-2xl grid-cols-3 border-y border-slate-300 dark:border-slate-700"
-            aria-label="Research approach summary"
-          >
-            {researchLogic.map(([label, value], index) => (
-              <div
-                key={label}
-                className="border-r border-slate-200 px-3 py-4 first:pl-0 last:border-r-0 sm:px-5 dark:border-slate-800"
-              >
-                <div className="flex items-center gap-2 font-mono text-[8px] tracking-[.1em] text-slate-400 uppercase">
-                  <span
-                    className={`size-1.5 rounded-full ${index === 0 ? "bg-[#1E3A5F] dark:bg-blue-300" : index === 1 ? "bg-teal-600 dark:bg-teal-400" : "bg-amber-600 dark:bg-amber-400"}`}
-                    aria-hidden="true"
-                  />
-                  {label}
-                </div>
-                <p className="mt-2 text-[11px] leading-4 font-medium text-slate-700 sm:text-xs dark:text-slate-300">
-                  {value}
-                </p>
-              </div>
-            ))}
           </div>
         </motion.div>
 

@@ -103,7 +103,7 @@ function FeaturedResearch({ projects }: { projects: ResearchMeta[] }) {
                 href={`/research/${project.slug}`}
                 className="inline-flex items-center gap-2 text-sm font-semibold text-blue-700 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none dark:text-blue-400"
               >
-                Open research poster
+                View research
                 <ArrowUpRight className="size-4 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1" />
               </Link>
             </div>
