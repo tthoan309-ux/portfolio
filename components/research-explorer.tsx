@@ -42,6 +42,10 @@ const choices = [
     caption: "A concise selection of completed empirical work.",
     action: "View featured research",
     icon: BookOpen,
+    accent: "bg-[#1E3A5F] dark:bg-blue-300",
+    iconTone:
+      "bg-[#e9eef5] text-[#1E3A5F] group-hover:bg-[#1E3A5F] group-hover:text-white dark:bg-blue-950 dark:text-blue-300 dark:group-hover:bg-blue-300 dark:group-hover:text-slate-950",
+    actionTone: "text-[#1E3A5F] dark:text-blue-300",
   },
   {
     id: "topics" as const,
@@ -49,6 +53,10 @@ const choices = [
     caption: "Browse the full research archive by question and method.",
     action: "Browse research topics",
     icon: Layers3,
+    accent: "bg-blue-600 dark:bg-blue-400",
+    iconTone:
+      "bg-blue-50 text-blue-700 group-hover:bg-blue-700 group-hover:text-white dark:bg-blue-950 dark:text-blue-300 dark:group-hover:bg-blue-400 dark:group-hover:text-slate-950",
+    actionTone: "text-blue-700 dark:text-blue-400",
   },
   {
     id: "progress" as const,
@@ -56,6 +64,10 @@ const choices = [
     caption: "Current studies, with development stages shown explicitly.",
     action: "View ongoing research",
     icon: FolderSearch,
+    accent: "bg-amber-600 dark:bg-amber-400",
+    iconTone:
+      "bg-amber-50 text-amber-700 group-hover:bg-amber-700 group-hover:text-white dark:bg-amber-950 dark:text-amber-300 dark:group-hover:bg-amber-400 dark:group-hover:text-slate-950",
+    actionTone: "text-amber-700 dark:text-amber-400",
   },
 ];
 
@@ -65,7 +77,7 @@ function FeaturedResearch({ projects }: { projects: ResearchMeta[] }) {
       {projects.map((project, index) => (
         <article
           key={project.slug}
-          className="group flex min-h-[310px] flex-col bg-white p-6 sm:p-8 dark:bg-slate-950"
+          className="group flex min-h-[310px] flex-col bg-white p-6 transition-colors duration-200 hover:bg-slate-50 sm:p-8 dark:bg-slate-950 dark:hover:bg-slate-900/60"
         >
           <div className="flex items-center justify-between gap-4 font-mono text-[10px] tracking-[.1em] uppercase">
             <span className="text-blue-700 dark:text-blue-400">
@@ -195,11 +207,15 @@ export function ResearchExplorer({
               aria-expanded={selected}
               aria-controls="research-explorer-panel"
               onClick={() => setActive(selected ? null : choice.id)}
-              className={`group relative flex min-h-64 cursor-pointer flex-col overflow-hidden border p-6 text-left transition-all duration-300 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none sm:p-8 ${selected ? "-translate-y-1 border-blue-700 bg-blue-700 text-white shadow-xl shadow-blue-950/20 dark:border-blue-400 dark:bg-blue-500 dark:text-slate-950" : "border-slate-300 bg-white hover:-translate-y-1 hover:border-blue-600 hover:shadow-xl hover:shadow-slate-950/10 dark:border-slate-700 dark:bg-slate-950 dark:hover:border-blue-400"}`}
+              className={`interactive-surface group relative flex min-h-64 cursor-pointer flex-col overflow-hidden border p-6 text-left sm:p-8 ${selected ? "border-blue-700 bg-blue-700 text-white shadow-xl shadow-blue-950/20 dark:border-blue-300 dark:bg-[#1E3A5F] dark:text-white" : "border-slate-300 bg-white hover:border-blue-600 hover:shadow-xl hover:shadow-slate-950/10 dark:border-slate-700 dark:bg-slate-950 dark:hover:border-blue-400"}`}
             >
+              <span
+                className={`absolute inset-x-0 top-0 h-1 ${selected ? "bg-white/40 dark:bg-slate-950/30" : choice.accent}`}
+                aria-hidden="true"
+              />
               <div className="flex items-start justify-between gap-4">
                 <span
-                  className={`font-mono text-[10px] ${selected ? "text-blue-300 dark:text-blue-700" : "text-slate-400"}`}
+                  className={`font-mono text-[10px] ${selected ? "text-blue-200" : "text-slate-400"}`}
                 >
                   0{index + 1}
                 </span>
@@ -208,7 +224,9 @@ export function ResearchExplorer({
                     <Check className="size-3" aria-hidden="true" /> Open
                   </span>
                 ) : (
-                  <span className="grid size-10 place-items-center rounded-full bg-blue-50 text-blue-700 transition-colors group-hover:bg-blue-700 group-hover:text-white dark:bg-blue-950 dark:text-blue-300 dark:group-hover:bg-blue-500 dark:group-hover:text-slate-950">
+                  <span
+                    className={`grid size-10 place-items-center rounded-full transition-colors ${choice.iconTone}`}
+                  >
                     <Icon className="size-5" aria-hidden="true" />
                   </span>
                 )}
@@ -217,12 +235,12 @@ export function ResearchExplorer({
                 {choice.label}
               </h3>
               <p
-                className={`mt-3 text-sm leading-6 ${selected ? "text-slate-300 dark:text-slate-600" : "text-slate-600 dark:text-slate-400"}`}
+                className={`mt-3 text-sm leading-6 ${selected ? "text-blue-100" : "text-slate-600 dark:text-slate-400"}`}
               >
                 {choice.caption}
               </p>
               <span
-                className={`mt-auto flex items-center justify-between gap-4 border-t pt-5 text-sm font-semibold ${selected ? "border-white/25 dark:border-slate-950/20" : "border-slate-200 text-blue-700 dark:border-slate-800 dark:text-blue-400"}`}
+                className={`mt-auto flex items-center justify-between gap-4 border-t pt-5 text-sm font-semibold ${selected ? "border-white/25 dark:border-slate-950/20" : `border-slate-200 dark:border-slate-800 ${choice.actionTone}`}`}
               >
                 {selected ? "Close this view" : choice.action}
                 {selected ? (

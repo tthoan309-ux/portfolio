@@ -47,6 +47,8 @@ const mapPositions = [
   "right-[3%] bottom-[8%]",
 ];
 
+const workAccents = ["bg-amber-500", "bg-blue-500", "bg-teal-500"] as const;
+
 function AirlineDashboard() {
   const seatClasses = [
     ["Business", 2547],
@@ -189,7 +191,7 @@ function CompetencyNode({
       aria-selected={active}
       aria-controls="competency-detail"
       onClick={onSelect}
-      className={`group border p-5 text-left transition-all duration-300 focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:outline-none ${active ? "border-blue-600 bg-blue-700 text-white shadow-xl shadow-blue-950/20 dark:border-blue-400 dark:bg-blue-500 dark:text-slate-950" : "border-slate-300 bg-white hover:-translate-y-1 hover:border-blue-600 hover:shadow-lg dark:border-slate-700 dark:bg-slate-950 dark:hover:border-blue-400"} ${className}`}
+      className={`interactive-surface group border p-5 text-left ${active ? "border-blue-600 bg-blue-700 text-white shadow-xl shadow-blue-950/20 dark:border-blue-400 dark:bg-blue-500 dark:text-slate-950" : "border-slate-300 bg-white hover:border-blue-600 hover:shadow-lg dark:border-slate-700 dark:bg-slate-950 dark:hover:border-blue-400"} ${className}`}
     >
       <div className="flex items-start justify-between gap-4">
         <span
@@ -252,7 +254,7 @@ export function CompetencyLab({
         </div>
 
         <div className="grid gap-4 lg:grid-cols-3">
-          {appliedWork.map((work) => {
+          {appliedWork.map((work, index) => {
             const active = work.id === workId;
             return (
               <button
@@ -260,8 +262,12 @@ export function CompetencyLab({
                 type="button"
                 aria-expanded={active}
                 onClick={() => setWorkId(active ? null : work.id)}
-                className={`group flex min-h-56 cursor-pointer flex-col border p-6 text-left transition-all duration-300 focus-visible:ring-2 focus-visible:ring-teal-500 focus-visible:outline-none ${active ? "-translate-y-1 border-teal-600 bg-teal-600 text-white shadow-xl shadow-teal-950/15 dark:border-teal-400 dark:bg-teal-500 dark:text-slate-950" : "border-slate-300 bg-white hover:-translate-y-1 hover:border-teal-600 hover:shadow-lg dark:border-slate-700 dark:bg-slate-950 dark:hover:border-teal-400"}`}
+                className={`interactive-surface group relative flex min-h-56 cursor-pointer flex-col overflow-hidden border p-6 text-left focus-visible:outline-teal-500 ${active ? "border-teal-600 bg-teal-600 text-white shadow-xl shadow-teal-950/15 dark:border-teal-400 dark:bg-teal-500 dark:text-slate-950" : "border-slate-300 bg-white hover:border-teal-600 hover:shadow-lg dark:border-slate-700 dark:bg-slate-950 dark:hover:border-teal-400"}`}
               >
+                <span
+                  className={`absolute inset-x-0 top-0 h-1 ${active ? "bg-white/40 dark:bg-slate-950/30" : workAccents[index % workAccents.length]}`}
+                  aria-hidden="true"
+                />
                 <div className="flex items-start justify-between gap-4">
                   <span
                     className={`font-mono text-[9px] tracking-wider uppercase ${active ? "text-teal-50 dark:text-teal-950" : "text-slate-400"}`}

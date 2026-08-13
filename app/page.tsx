@@ -1,4 +1,5 @@
 import {
+  Award,
   ArrowUpRight,
   Eye,
   Github,
@@ -7,6 +8,8 @@ import {
   MapPin,
 } from "lucide-react";
 import Image from "next/image";
+import { BackgroundMotif } from "@/components/background-motif";
+import { CannonMark } from "@/components/cannon-mark";
 import { CompetencyLab } from "@/components/competency-lab";
 import { CvTextTrigger, CvTrigger } from "@/components/cv-viewer";
 import { Header } from "@/components/header";
@@ -29,21 +32,22 @@ function SectionIntro({
   eyebrow,
   title,
   description,
+  tone = "blue",
 }: {
   number: string;
   eyebrow: string;
   title: string;
   description?: string;
+  tone?: "navy" | "blue" | "teal" | "gold";
 }) {
   return (
-    <Reveal className="mb-12 grid gap-5 lg:mb-16 lg:grid-cols-[190px_1fr]">
-      <div className="flex items-center gap-3 self-start text-xs font-semibold tracking-[.18em] text-slate-400 uppercase">
+    <Reveal className="mb-11 grid gap-5 lg:mb-14 lg:grid-cols-[190px_1fr]">
+      <div className={`section-kicker tone-${tone} self-start`}>
         <span className="text-blue-700 dark:text-blue-400">{number}</span>
-        <span className="h-px w-8 bg-slate-300 dark:bg-slate-700" />
-        {eyebrow}
+        <span>{eyebrow}</span>
       </div>
       <div>
-        <h2 className="max-w-4xl text-3xl font-semibold tracking-[-.04em] text-balance text-slate-950 sm:text-5xl dark:text-white">
+        <h2 className="max-w-4xl text-3xl leading-[1.05] font-semibold tracking-[-.045em] text-balance text-slate-950 sm:text-5xl dark:text-white">
           {title}
         </h2>
         {description && (
@@ -85,13 +89,18 @@ export default function Home() {
         />
         <Hero />
 
-        <section id="education" className="section-shell scroll-mt-24">
+        <section
+          id="education"
+          className="ambient-section ambient-gold section-shell scroll-mt-24"
+        >
+          <BackgroundMotif variant="education" />
           <SectionIntro
             number="01"
             eyebrow="Education"
             title="International Economics at Foreign Trade University"
+            tone="gold"
           />
-          <Reveal className="grid gap-10 border-y border-slate-300 py-8 lg:grid-cols-[1.15fr_.85fr] dark:border-slate-700">
+          <Reveal className="editorial-surface grid gap-10 border-t-2 border-t-amber-700 p-6 sm:p-8 lg:grid-cols-[1.15fr_.85fr] lg:p-10 dark:border-t-amber-400">
             <div>
               <div className="flex items-center gap-5">
                 <div className="grid size-20 shrink-0 place-items-center rounded-full bg-white p-1.5 shadow-sm ring-1 ring-slate-200 dark:ring-slate-700">
@@ -119,7 +128,7 @@ export default function Home() {
                 {profile.program} · Faculty of {profile.faculty}
               </p>
               <dl className="mt-8 grid max-w-xl grid-cols-2 gap-px bg-slate-200 dark:bg-slate-800">
-                <div className="bg-slate-50 p-5 dark:bg-slate-950">
+                <div className="bg-white p-5 dark:bg-slate-950">
                   <dt className="text-[10px] text-slate-400 uppercase">
                     Expected graduation
                   </dt>
@@ -127,7 +136,7 @@ export default function Home() {
                     {profile.expectedGraduation}
                   </dd>
                 </div>
-                <div className="bg-slate-50 p-5 dark:bg-slate-950">
+                <div className="bg-white p-5 dark:bg-slate-950">
                   <dt className="text-[10px] text-slate-400 uppercase">GPA</dt>
                   <dd className="mt-2 font-semibold">{profile.gpa}</dd>
                 </div>
@@ -139,11 +148,20 @@ export default function Home() {
               </p>
               <div className="mt-5 divide-y divide-slate-200 border-y border-slate-200 dark:divide-slate-800 dark:border-slate-800">
                 {profile.scholarships.map((scholarship) => (
-                  <div key={scholarship.period} className="py-4">
-                    <p className="text-sm font-medium">{scholarship.name}</p>
-                    <p className="mt-1 font-mono text-[11px] text-blue-700 dark:text-blue-400">
-                      {scholarship.period}
-                    </p>
+                  <div
+                    key={scholarship.period}
+                    className="grid grid-cols-[28px_1fr] gap-3 py-4"
+                  >
+                    <Award
+                      className="mt-0.5 size-4 text-amber-700 dark:text-amber-400"
+                      aria-hidden="true"
+                    />
+                    <div>
+                      <p className="text-sm font-medium">{scholarship.name}</p>
+                      <p className="mt-1 font-mono text-[11px] text-amber-700 dark:text-amber-400">
+                        {scholarship.period}
+                      </p>
+                    </div>
                   </div>
                 ))}
               </div>
@@ -169,13 +187,15 @@ export default function Home() {
 
         <section
           id="research"
-          className="section-shell scroll-mt-24 border-y border-slate-200/70 bg-slate-100/55 dark:border-slate-800/70 dark:bg-slate-900/30"
+          className="ambient-section ambient-blue section-shell scroll-mt-24 border-y border-slate-200/70 bg-[#f3f7fb] dark:border-slate-800/70 dark:bg-[#061022]"
         >
+          <BackgroundMotif variant="research" />
           <SectionIntro
             number="02"
             eyebrow="Research"
             title="A closer look at my research"
             description="New to my work? Start with a short selection of completed studies. You can also browse by topic or see the questions I am currently developing."
+            tone="blue"
           />
           <ResearchExplorer
             featured={featured}
@@ -185,12 +205,17 @@ export default function Home() {
           />
         </section>
 
-        <section id="competencies" className="section-shell scroll-mt-24">
+        <section
+          id="competencies"
+          className="ambient-section ambient-teal section-shell scroll-mt-24 bg-[#f3faf9] dark:bg-[#041412]"
+        >
+          <BackgroundMotif variant="capabilities" />
           <SectionIntro
             number="03"
             eyebrow="Capabilities"
             title="How I work across economics, data, and computation"
             description="Alongside academic research, I build predictive models, dashboards, and data products. The projects and map below show where I have applied these skills and how they support my research practice."
+            tone="teal"
           />
           <CompetencyLab
             competencies={competencies}
@@ -200,13 +225,15 @@ export default function Home() {
 
         <section
           id="experience"
-          className="section-shell scroll-mt-24 border-y border-slate-200/70 bg-white dark:border-slate-800/70 dark:bg-slate-900/25"
+          className="ambient-section ambient-navy section-shell scroll-mt-24 border-y border-slate-200/70 bg-[#fbfaf6] dark:border-slate-800/70 dark:bg-[#0d1119]"
         >
+          <BackgroundMotif variant="experience" />
           <SectionIntro
             number="04"
             eyebrow="Experience"
             title="Academic and research experience"
             description={experience.intro}
+            tone="navy"
           />
           <div className="border-t border-slate-300 dark:border-slate-700">
             {[...experience.leadership, ...experience.experience].map(
@@ -214,7 +241,7 @@ export default function Home() {
                 <Reveal
                   key={`${item.organization}-${item.role}`}
                   delay={index * 0.04}
-                  className="grid gap-4 border-b border-slate-200 py-7 sm:grid-cols-[110px_1fr] dark:border-slate-800"
+                  className="timeline-entry grid gap-4 border-b border-slate-200 py-7 sm:grid-cols-[110px_1fr] dark:border-slate-800"
                 >
                   <p className="font-mono text-[10px] text-slate-400 uppercase">
                     {item.period}
@@ -238,7 +265,11 @@ export default function Home() {
           </div>
         </section>
 
-        <section id="contact" className="section-shell scroll-mt-24">
+        <section
+          id="contact"
+          className="ambient-section ambient-blue section-shell scroll-mt-24"
+        >
+          <BackgroundMotif variant="contact" />
           <Reveal className="grid gap-12 border-t-2 border-slate-950 pt-10 lg:grid-cols-[1fr_auto] lg:items-end dark:border-white">
             <div>
               <p className="flex items-center gap-2 text-xs font-semibold tracking-[.16em] text-slate-400 uppercase">
@@ -288,6 +319,13 @@ export default function Home() {
             <p className="mt-5">
               © 2026–2027. Personal academic research website.
             </p>
+            <div
+              className="mt-5 inline-flex items-center gap-2.5 text-[10px] tracking-[.08em] text-slate-400 uppercase"
+              aria-label="Personal detail: Come On You Gunners"
+            >
+              <CannonMark className="cannon-footer w-10" />
+              <span>COYG</span>
+            </div>
           </div>
           <nav
             className="flex flex-wrap gap-x-5 gap-y-3 sm:justify-end"
