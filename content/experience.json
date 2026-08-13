@@ -3,6 +3,8 @@
   "experience": [
     {
       "organization": "Vietnam Institute for Advanced Study in Mathematics (VIASM)",
+      "logo": "/images/experience/viasm.png",
+      "logoScale": 1,
       "role": "Academic Activities Organization Intern",
       "type": "Academic experience",
       "period": "June–August 2026",
@@ -10,6 +12,8 @@
     },
     {
       "organization": "Young Researchers Club",
+      "logo": "/images/experience/young-researchers-club.jpg",
+      "logoScale": 1,
       "role": "Research and Development Department",
       "type": "Research experience",
       "period": "2025–2026",
@@ -17,6 +21,8 @@
     },
     {
       "organization": "Global Economics Club",
+      "logo": "/images/experience/global-economics-club.jpg",
+      "logoScale": 1,
       "role": "Research Department",
       "type": "Research experience",
       "period": "2025–2026",
@@ -26,6 +32,8 @@
   "leadership": [
     {
       "organization": "International Economics Union (IEU)",
+      "logo": "/images/experience/international-economics-union.png",
+      "logoScale": 1.8,
       "role": "Vice President",
       "period": "Current",
       "description": "Coordinate academic planning, internal operations, and student research activities in international economics."

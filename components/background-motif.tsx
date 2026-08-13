@@ -1,12 +1,11 @@
 type BackgroundMotifProps = {
-  variant: "education" | "research" | "capabilities" | "experience" | "contact";
+  variant: "education" | "research" | "capabilities" | "contact";
 };
 
 const toneClasses = {
   education: "text-amber-700 dark:text-amber-300",
   research: "text-blue-700 dark:text-blue-300",
   capabilities: "text-teal-700 dark:text-teal-300",
-  experience: "text-[#1E3A5F] dark:text-blue-200",
   contact: "text-blue-700 dark:text-blue-300",
 };
 
@@ -144,48 +143,6 @@ export function BackgroundMotif({ variant }: BackgroundMotifProps) {
           </text>
           <text x="972" y="1090">
             APPLIED SYSTEM / 02
-          </text>
-        </g>
-      </svg>
-    );
-  }
-
-  if (variant === "experience") {
-    return (
-      <svg
-        className={`section-motif ${toneClasses[variant]}`}
-        viewBox="0 0 1280 900"
-        preserveAspectRatio="none"
-        fill="none"
-        style={motifStyle}
-        aria-hidden="true"
-      >
-        <g stroke="currentColor" strokeWidth="1">
-          <path d="M1112 92v716" />
-          <path d="M1064 188h96M1064 356h96M1064 524h96M1064 692h96" />
-          <circle cx="1112" cy="188" r="18" />
-          <circle cx="1112" cy="356" r="12" />
-          <circle cx="1112" cy="524" r="12" />
-          <circle cx="1112" cy="692" r="12" />
-        </g>
-        <g fill="currentColor">
-          <circle cx="1112" cy="188" r="4" />
-          <circle cx="1112" cy="356" r="4" />
-          <circle cx="1112" cy="524" r="4" />
-          <circle cx="1112" cy="692" r="4" />
-        </g>
-        <g fill="currentColor" fontFamily="monospace" fontSize="9">
-          <text x="1168" y="192">
-            CURRENT
-          </text>
-          <text x="1168" y="360">
-            2026
-          </text>
-          <text x="1168" y="528">
-            2025
-          </text>
-          <text x="1168" y="696">
-            FOUNDATION
           </text>
         </g>
       </svg>

@@ -227,7 +227,6 @@ export default function Home() {
           id="experience"
           className="ambient-section ambient-navy section-shell scroll-mt-24 border-y border-slate-200/70 bg-[#fbfaf6] dark:border-slate-800/70 dark:bg-[#0d1119]"
         >
-          <BackgroundMotif variant="experience" />
           <SectionIntro
             number="04"
             eyebrow="Experience"
@@ -247,13 +246,25 @@ export default function Home() {
                     {item.period}
                   </p>
                   <div>
-                    <div className="flex flex-wrap items-baseline justify-between gap-2">
+                    <div className="grid gap-4 lg:grid-cols-[minmax(0,1fr)_minmax(280px,.85fr)] lg:items-center">
                       <h3 className="text-xl font-semibold tracking-[-.02em]">
                         {item.role}
                       </h3>
-                      <p className="text-sm font-medium text-blue-700 dark:text-blue-400">
-                        {item.organization}
-                      </p>
+                      <div className="flex items-center gap-3 lg:justify-end">
+                        <span className="relative grid h-14 w-24 shrink-0 place-items-center overflow-hidden border border-slate-200 bg-white p-1.5 shadow-sm dark:border-slate-700">
+                          <Image
+                            src={item.logo}
+                            alt={`${item.organization} logo`}
+                            fill
+                            sizes="96px"
+                            className="object-contain p-1.5"
+                            style={{ transform: `scale(${item.logoScale})` }}
+                          />
+                        </span>
+                        <p className="max-w-xs text-sm font-medium text-blue-700 lg:text-right dark:text-blue-400">
+                          {item.organization}
+                        </p>
+                      </div>
                     </div>
                     <p className="mt-3 max-w-3xl text-sm leading-6 text-slate-600 dark:text-slate-400">
                       {item.description}
