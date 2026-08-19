@@ -127,6 +127,9 @@ export default function Home() {
               <p className="mt-3 text-sm text-slate-600 dark:text-slate-400">
                 {profile.program} · Faculty of {profile.faculty}
               </p>
+              <p className="mt-1 text-sm text-slate-500 dark:text-slate-500">
+                {profile.college}
+              </p>
               <dl className="mt-8 grid max-w-xl grid-cols-2 gap-px bg-slate-200 dark:bg-slate-800">
                 <div className="bg-white p-5 dark:bg-slate-950">
                   <dt className="text-[10px] text-slate-400 uppercase">
