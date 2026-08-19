@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Sans, Inter, JetBrains_Mono } from "next/font/google";
+import { Analytics } from "@vercel/analytics/next";
 import { profile, siteConfig } from "@/data/site";
 import { CopyProtection } from "@/components/copy-protection";
 import { CvViewerProvider } from "@/components/cv-viewer";
@@ -120,6 +121,7 @@ export default function RootLayout({
           <CopyProtection />
           {children}
         </CvViewerProvider>
+        <Analytics />
       </body>
     </html>
   );
